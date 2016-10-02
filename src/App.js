@@ -47,14 +47,17 @@ var Body = React.createClass({
     return (
       <div className="content container-fluid">
         <div className="col-xs-5 text-center firstCont rounded">
-          <h1>Welcome to HipStore</h1>
+          <h1 className="welcome">Welcome to HipStore</h1>
         </div>
         <div className="col-xs-3 secondCont rounded">
           <h1>Featured Item</h1>
         </div>
         <div className="col-xs-3 thirdCont rounded">
-          <div className="newItems rounded"><h1>New Items</h1></div>
-          <div><h1 className="callToAction rounded">Sign Up</h1></div>
+          <div className="newItems rounded"><h1>Newest Item</h1></div>
+          <div className="rounded callToAction">
+            <h1>Sign Up</h1>
+            <button type="button" className="btn btn-default btn">Join Now!</button>
+          </div>
         </div>
       </div>
     )
@@ -90,13 +93,23 @@ var Footer = React.createClass({
             <li className="nav-item footerLi"><a href="#" className="nav-link bottomLinks">Contact Us</a></li>
           </ul>
           <div className="col-xs-4 text-center">
-            <a className="presented" href="http://www.c4q.nyc/" target="_blank">Presented by C4Q</a>
+            <a className="presented" href="http://www.c4q.nyc/" target="_blank">Sponsored by C4Q</a>
           </div>
           <div className="col-xs-1 pull-right">
           <small>HipStore &copy; 2016 </small>
           </div>
         </div>
         
+      </div>
+    )
+  }
+})
+
+var foundError = React.createClass({
+  render: function(){
+    return (
+      <div className="errorPage">
+
       </div>
     )
   }
