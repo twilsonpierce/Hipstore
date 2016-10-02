@@ -31,6 +31,29 @@
   margin-top: 100px;
 }
 
-body {
-  
+body, html {
+  margin: 0;
+  padding: 0;
 }
+
+.aboutHS {
+  margin-left: 80px;
+}
+
+.footerLi {
+  display: inline;
+  margin-left: 20px;
+}
+
+a.bottomLinks {
+  text-decoration: none;
+}
+a.presented {
+  text-decoration: none;
+}
+
+.presented {
+  font-weight: 500;
+  font-size: 1.2em;
+}
+
