@@ -25,15 +25,49 @@
 */
 
 .navbar {
-  /*background-color: white;*/
+  background-color: white;
 }
 .margin {
-  margin-top: 100px;
+  /*margin-top: 100px;*/
 }
 
 body, html {
   margin: 0;
   padding: 0;
+}
+
+.firstCont {
+  color: white;
+  height: 800px;
+  /*background-color: blue;*/
+  background-image: url('https://hd.unsplash.com/photo-1429728001698-8ba1c4c64783');
+  background-size: 1300px;
+}
+.secondCont {
+  background-image: url('http://ecx.images-amazon.com/images/I/61tGynkQP7L._SL1000_.jpg');
+  background-color: yellow;
+  background-size: 800px;
+}
+.thirdCont {
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+div.newItems {
+  height: 350px;
+  background-image: url('http://bearddusud.com/wp-content/uploads/2015/04/Elite-BEARD-Grooming-Kit-Kit-packed-closeup-2.jpg');
+  background-size: cover;
+}
+
+.callToAction{
+  background-color: firebrick;
+  height: 350px;
+}
+
+.rounded {
+  border-radius: 2px;
 }
 
 .aboutHS {
@@ -55,5 +89,16 @@ a.presented {
 .presented {
   font-weight: 500;
   font-size: 1.2em;
+}
+
+.content {
+  /*background-color: firebrick;*/
+  margin-top: 80px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.bottomNav {
+  /*margin-left: 60px;*/
 }
 

@@ -10,6 +10,7 @@ var App = React.createClass({
     return (
       <div>
         <Nav />
+        <Body />
         <Footer />
       </div>
     )
@@ -19,7 +20,7 @@ var App = React.createClass({
 var Nav = React.createClass({
   render: function() {
     return (
-      <nav className="navbar navbar-default navbar-fixed-top">
+      <nav className="navbar  navbar-fixed-top">
         <div className="container-fluid">
         <a className="navbar-brand col-xs-4">HipStore</a>
         <form className="navbar-form pull-right col-xs-2">
@@ -27,16 +28,35 @@ var Nav = React.createClass({
             <input type="text" className="form-control" placeholder="Search" />
           </div>
         </form>
-        <ul className="nav navbar-nav col-xs-4 pull-right">
-          <li className="nav-item"><a href="#" className="nav-link">Home</a></li>
-          <li className="nav-item"><a href="#" className="nav-link">Apparel</a></li>
-          <li className="nav-item"><a href="#" className="nav-link">Food</a></li>
-          <li className="nav-item"><a href="#" className="nav-link">Tech</a></li>
-          <li className="nav-item"><a href="#" className="nav-link">Books</a></li>
-          <li className="nav-item"><a href="#" className="nav-link">Other</a></li>
+        <ul className="nav navbar-nav col-xs-4 pull-right text-center">
+          <li className="nav-item pull-right"><a href="#" className="nav-link">Other</a></li>
+          <li className="nav-item pull-right"><a href="#" className="nav-link">Books</a></li>
+          <li className="nav-item pull-right"><a href="#" className="nav-link">Tech</a></li>
+          <li className="nav-item pull-right"><a href="#" className="nav-link">Food</a></li>
+          <li className="nav-item pull-right"><a href="#" className="nav-link">Apparel</a></li>
+          <li className="nav-item pull-right"><a href="#" className="nav-link">Home</a></li>
         </ul>
         </div>
       </nav>
+    )
+  }
+})
+
+var Body = React.createClass({
+  render: function(){
+    return (
+      <div className="content container-fluid">
+        <div className="col-xs-5 text-center firstCont rounded">
+          <h1>Welcome to HipStore</h1>
+        </div>
+        <div className="col-xs-3 secondCont rounded">
+          <h1>Featured Item</h1>
+        </div>
+        <div className="col-xs-3 thirdCont rounded">
+          <div className="newItems rounded"><h1>New Items</h1></div>
+          <div><h1 className="callToAction rounded">Sign Up</h1></div>
+        </div>
+      </div>
     )
   }
 })
@@ -48,7 +68,7 @@ var Footer = React.createClass({
         <hr />
         <div className="container-fluid text-muted">
           <div className="aboutHS col-xs-7">
-            <h1 className="">About The HipStore</h1>
+            <h1 className="">About HipStore</h1>
             <p>Hip Store totally brings hip apparel and accessories from Brooklyn to San Francisco.</p>
           </div>
           <div className="signUp col-xs-3 ">
@@ -63,16 +83,16 @@ var Footer = React.createClass({
         </div>
         <hr />
         <div className="container-fluid">
-          <ul className="navbar-nav col-xs-5">
+          <ul className="navbar-nav col-xs-4 bottomNav">
             <li className="nav-item footerLi"><a href="#" className="nav-link bottomLinks">Account</a></li>
             <li className="nav-item footerLi"><a href="#" className="nav-link bottomLinks">Our team</a></li>
             <li className="nav-item footerLi"><a href="#" className="nav-link bottomLinks">Jobs</a></li>
             <li className="nav-item footerLi"><a href="#" className="nav-link bottomLinks">Contact Us</a></li>
           </ul>
-          <div className="col-xs-5">
+          <div className="col-xs-4 text-center">
             <a className="presented" href="http://www.c4q.nyc/" target="_blank">Presented by C4Q</a>
           </div>
-          <div class="col-xs-1 pull-right">
+          <div className="col-xs-1 pull-right">
           <small>HipStore &copy; 2016 </small>
           </div>
         </div>
