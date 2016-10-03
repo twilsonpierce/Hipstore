@@ -15,13 +15,6 @@ const data = {
       quantity: 35, 
       rating: 4.1
       }, 
-      {name: 'Traditional blanket sweater', 
-      image: ['https://ae01.alicdn.com/kf/HTB1NpKQMXXXXXXHXVXXq6xXFXXX7/With-Great-Beard-Comes-Retro-font-b-Funky-b-font-Hipster-T-shirt-font-b-Tshirt.jpg'], 
-      price: 39.00, 
-      description: 'Totally not a poncho', 
-      quantity: 150, 
-      rating: 4.9
-      }
   ],
 
   food: [{
@@ -35,7 +28,7 @@ const data = {
   ],
 
   art: [{
-      name: 'Fox Art', 
+      name: 'Foxy Art', 
       image: ['https://img1.etsystatic.com/102/1/10394139/il_fullxfull.843600093_dd82.jpg'], 
       price: 200.00, 
       description: '', 
@@ -62,7 +55,7 @@ const data = {
       {name: 'Glasses with no lenses', 
       image: ['https://koreadaybyday.files.wordpress.com/2013/02/oculos-sem-lente.jpg'], 
       price: 89.99, 
-      description: '', 
+      description: 'Stylish glasses for those with 20/20 vision and are in need of some face swag.', 
       quantity: 25, 
       rating: 3.5} 
        ]
