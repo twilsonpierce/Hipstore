@@ -1,16 +1,10 @@
 body, html {
-  margin: 0;
-  padding: 0;
   font-family: 'Lato', sans-serif;
 }
 .navbar {
   background-color: white;
 }
-.margin {
-  /*margin-top: 100px;*/
-}
 .content {
-  /*background-color: firebrick;*/
   margin-top: 80px;
   color: white;
   display: flex;
@@ -45,7 +39,7 @@ body, html {
 
 div.newItems {
   height: 375px;
-  background-image: url('http://bearddusud.com/wp-content/uploads/2015/04/Elite-BEARD-Grooming-Kit-Kit-packed-closeup-2.jpg');
+  background-image: url('http://www.cad-eauonline.com/wp-content/uploads/2015/04/MG_1161.jpg');
   background-size: cover;
   /*color: #59D8E5;*/
   display: flex;
@@ -53,7 +47,6 @@ div.newItems {
 }
 
 .callToAction{
-  background-color: firebrick;
   background-image: url('https://images.unsplash.com/photo-1473949103155-d89f3aa93cf1?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&s=b8d60f3a1c7c40f9981d2bb00e476559');
   background-size: cover;  
   height: 375px;
@@ -67,9 +60,25 @@ div.newItems {
   transition: 500ms;
 }
 .callToAction button:hover {
-  background-color: firebrick;
   color: white;
   border: 1px solid firebrick;
+}
+.errorPage {
+  height: 100vh;
+  background-image: url("https://hd.unsplash.com/photo-1445206839590-883f6a81c3c6");
+  background-size: cover;
+  padding-top: 100px;
+  color: white;
+  /*display: flex;*/
+  /*flex-direction: column;*/
+  /*justify-content: center;*/
+}
+.errorPage h1 {
+  font-size: 125px;
+  font-weight: 600;
+}
+.errorPage h2 {
+  font-weight: 300;
 }
 .rounded {
   border-radius: 2px;
@@ -96,8 +105,4 @@ a.presented {
   font-size: 1.2em;
 }
 
-.errorPage {
-  background-image: url("https://unsplash.com/collections/199667/404?photo=yEDhhN5zP4o");
-
-}
 

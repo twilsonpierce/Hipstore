@@ -13,7 +13,7 @@ var Nav = React.createClass({
         </form>
         <ul className="nav navbar-nav col-xs-4 pull-right text-center">
           <li className="nav-item pull-right"><a href="#" className="nav-link">Other</a></li>
-          <li className="nav-item pull-right"><a href="#" className="nav-link">Books</a></li>
+          <li className="nav-item pull-right"><a href="#" className="nav-link">Art/Books</a></li>
           <li className="nav-item pull-right"><a href="#" className="nav-link">Tech</a></li>
           <li className="nav-item pull-right"><a href="#" className="nav-link">Food</a></li>
           <li className="nav-item pull-right"><a href="#" className="nav-link">Apparel</a></li>

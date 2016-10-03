@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Router, Route, Link, hashHistory, browserHistory} from 'react-router';
+import {Router, Route, Link, hashHistory, browserHistory, IndexRoute} from 'react-router';
 import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
 
@@ -31,6 +31,13 @@ var App = React.createClass({
 
 
 ReactDOM.render(
-  <App />,
+  <Router history={browserHistory}>
+    <Route path="/" component={App}>
+      <IndexRoute component={HomePage} />
+      <Route path=":category" component={CategoryPage} />
+      <Route path=":product" component={ProductPage} />
+      <Route path="*" component={FoundError} />
+    </Route> 
+  </Router>,
   document.getElementById('root')
 );
