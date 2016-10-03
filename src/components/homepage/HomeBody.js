@@ -1,8 +1,7 @@
 import React from 'react'
-import ModalElement from './modal'
 
 var HomeBody = React.createClass({
-  render: function(){
+  render(){
     return (
       <div className="content container-fluid">
         <div className="col-xs-5 text-center firstCont rounded">
@@ -20,7 +19,6 @@ var HomeBody = React.createClass({
             <button type="button" className="btn btn-default btn">Join Now!</button>
           </div>
         </div>
-        <ModalElement/>
       </div>
     )
   }

@@ -2,7 +2,7 @@ import React from 'react'
 import {Link} from 'react-router'
 import data from '../data'
 
-var Nav = React.createClass({
+const Nav = React.createClass({
   getInitialState(){
     return {
       itemName: ''
@@ -13,6 +13,7 @@ var Nav = React.createClass({
     this.props.onChange(this.state.itemName)
   },
   handleReset: function (event){
+    this.props.openModal();
     if(event.key === "Backspace"){
       this.props.onReset()
     }
@@ -21,14 +22,14 @@ var Nav = React.createClass({
     var links = Object.keys(data).map(function(category, i){
       return (
         <li key={i} className="nav-item pull-right">
-          <Link to={"/" + category}>{category.toUpperCase()}</Link>
+          <Link to={"/category/" + category}>{category.toUpperCase()}</Link>
         </li>
       )
     })
     return (
       <nav className="navbar navbar-fixed-top">
         <div className="container-fluid">
-        <a className="navbar-brand col-xs-4">hipstore</a>
+        <p className="navbar-brand col-xs-4"><Link to="/">hipstore</Link></p>
         <form className="navbar-form pull-right col-xs-2">
           <div className="form-group">
             <input 
