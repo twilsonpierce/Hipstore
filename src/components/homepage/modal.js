@@ -1,5 +1,6 @@
 import React from 'react'
 import Modal from 'react-modal';
+import ModalInput from './ModalInput';
 
 
 const customStyles = {
@@ -40,11 +41,13 @@ var ModalElement = React.createClass({
           isOpen={this.state.modalIsOpen}
           onAfterOpen={this.afterOpenModal}
           onRequestClose={this.closeModal}
-          style={customStyles} >
+          style={customStyles}>
 
-          <h2 ref="subtitle">Hello</h2>
+          <h2 ref="subtitle">Search Results:</h2>
+          <ModalInput />
           <button onClick={this.closeModal}>close</button>
-          <div>I am a modal</div>
+          <div>
+          </div>
         </Modal>
       </div>
     );

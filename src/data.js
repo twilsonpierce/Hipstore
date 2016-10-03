@@ -1,4 +1,4 @@
-let data = {
+const data = {
 
   apparel: [{name: 'All Black Beanie', image: ['https://s-media-cache-ak0.pinimg.com/564x/cd/ec/75/cdec7586d503e4b90a9bc6c39286b25f.jpg'], price: 9.99, description: 'HipStore Hats', quantity: 50, rating: 4.0},
       
@@ -98,21 +98,21 @@ let data = {
 };
 
 
-data.getApparel = function(){
-  return this.apparel;
-};
+// data.getApparel = function(){
+//   return this.apparel;
+// };
 
-data.getFood = function(){
-  return this.food;
-};
+// data.getFood = function(){
+//   return this.food;
+// };
 
-data.getTech = function(){
-  return this.tech;
-};
+// data.getTech = function(){
+//   return this.tech;
+// };
 
-data.getOther = function(){
-  return this.other;
-};
+// data.getOther = function(){
+//   return this.other;
+// };
 
 export default data;
 
