@@ -2,7 +2,6 @@ import React from 'react'
 import Modal from 'react-modal';
 import ModalInput from './ModalInput';
 
-
 const customStyles = {
   content : {
     top                   : '50%',
@@ -36,9 +35,8 @@ var ModalElement = React.createClass({
   render: function() {
     return (
       <div>
-        <button onClick={this.openModal}>Open Modal</button>
         <Modal
-          isOpen={this.state.modalIsOpen}
+          isOpen={this.props.modalState}
           onAfterOpen={this.afterOpenModal}
           onRequestClose={this.closeModal}
           style={customStyles}>
