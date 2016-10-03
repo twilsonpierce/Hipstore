@@ -11,7 +11,9 @@ var HomeBody = React.createClass({
           <h1>Featured Item</h1>
         </div>
         <div className="col-xs-3 thirdCont rounded">
-          <div className="newItems rounded"><h1>Newest Item</h1></div>
+          <div className="newItems rounded">
+            <h1>Newest Item</h1>
+          </div>
           <div className="rounded callToAction">
             <h1>Sign Up</h1>
             <button type="button" className="btn btn-default btn">Join Now!</button>

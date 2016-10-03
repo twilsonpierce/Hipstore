@@ -10,7 +10,7 @@ var Footer = React.createClass({
             <h1 className="">About HipStore</h1>
             <p>Hip Store totally brings hip apparel and accessories from Brooklyn to San Francisco.</p>
           </div>
-          <div className="signUp col-xs-3 ">
+          <div className="signUp col-xs-3">
             <h3 className="">Want to stay up to date?</h3>
             <div className="input-group">
               <input type="email" className="form-control" placeholder="Email" />
