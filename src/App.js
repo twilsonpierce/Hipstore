@@ -13,12 +13,20 @@ import CategoryPage from './CategoryPage'
 import ProductPage from './ProductPage'
 import data from './data'
 
-
 var App = React.createClass({
   getInitialState(){
     return {data: data}
   },
+  sortData(){
+    var listOfNames = Object.keys(data).map(function(category){
+      return data[category].map(function(item){
+          return item.name
+      })
+    })
+    console.log(...listOfNames)
+  },
   render() {
+    this.sortData()
     return (
       <div>
         <Nav />
