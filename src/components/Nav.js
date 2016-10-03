@@ -5,7 +5,7 @@ var Nav = React.createClass({
     return (
       <nav className="navbar  navbar-fixed-top">
         <div className="container-fluid">
-        <a className="navbar-brand col-xs-4">HipStore</a>
+        <a className="navbar-brand col-xs-4">hipstore</a>
         <form className="navbar-form pull-right col-xs-2">
           <div className="form-group">
             <input type="text" className="form-control" placeholder="Search" />
