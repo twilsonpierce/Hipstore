@@ -21,6 +21,7 @@ const Nav = React.createClass({
   render: function() {
     var links = Object.keys(data).map(function(category, i){
       return (
+
         <li key={i} className="nav-item pull-right">
           <Link to={"/category/" + category}>{category.toUpperCase()}</Link>
         </li>
