@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Router, Route, Link, hashHistory, browserHistory, IndexRoute} from 'react-router';
+import {Router, Route, browserHistory, IndexRoute} from 'react-router';
 import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
 
@@ -14,22 +14,42 @@ import ProductPage from './ProductPage'
 import data from './data'
 
 var App = React.createClass({
+
   getInitialState(){
-    return {data: data}
+    return {data: data, listOfItems: '', filteredList: ''}
   },
-  sortData(){
-    var listOfNames = Object.keys(data).map(function(category){
+
+  componentDidMount(){
+
+    //create a list of all data items
+    var listOfItems = []
+    Object.keys(data).map(function(category){
       return data[category].map(function(item){
-          return item.name
+          listOfItems.push(item.name.toLowerCase())
       })
     })
-    console.log(...listOfNames)
+    this.setState({listOfItems: listOfItems, filteredList: listOfItems})
+  },
+
+  handleItemSearch(item){
+    function sameLetters(filteredListItem) {
+      if(filteredListItem.indexOf(item) !== -1){
+        return filteredListItem
+      }
+    }
+    var searchItems = this.state.filteredList.filter(
+    sameLetters)
+    
+    this.setState({filteredList: searchItems})
+  },
+  handleSearchReset: function() {
+    this.setState({filteredList: this.state.listOfItems})
   },
   render() {
-    this.sortData()
+    console.log(this.state.filteredList)
     return (
       <div>
-        <Nav />
+        <Nav onChange={this.handleItemSearch} onReset={this.handleSearchReset}/>
         {this.props.children}
         <Footer />
       </div>
@@ -43,7 +63,7 @@ ReactDOM.render(
     <Route path="/" component={App}>
       <IndexRoute component={HomePage} />
       <Route path=":category" component={CategoryPage} />
-      <Route path=":product" component={ProductPage} />
+      <Route path=":category/:product" component={ProductPage} />
       <Route path="*" component={FoundError} />
     </Route> 
   </Router>,
