@@ -6,10 +6,8 @@ const BottomFeature = React.createClass({
     let itemDisplay = [];
     for (let i = this.props.bottomI; i < this.props.bottomI + 4; i++){
       let item = this.props.data.tech[i]
-      console.log("item", item.name )
         itemDisplay.push(<DisplayProduct itemName={item.name} src={item.image[0]} key={i}/>)
     }
-    console.log("render bottom", this.props.bottomI)
     return(
     <div>
       <button onClick={this.props.scrollLeft}>

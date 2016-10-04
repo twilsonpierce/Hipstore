@@ -34,9 +34,16 @@ var ModalElement = React.createClass({
   },
 
   render: function() {
+    // let category = null
+    // let filteredItem = this.props.data.map(function(cate){
+    //   cate.map(function(item){
+    //     if(item === )
+    //   })
+    // })
+
     let itemDisplay = []
     for (let i = 0; i < 6; i++){
-      itemDisplay.push(<DisplayProduct key={i}/>)
+      itemDisplay.push(<DisplayProduct itemName={this.props.filteredList[i]} key={i}/>)
     }
     return (
       <div>

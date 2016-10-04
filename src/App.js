@@ -43,6 +43,7 @@ var App = React.createClass({
     this.setState({modalIsOpen: true});
   },
   closeModal: function() {
+    console.log("closed")
     this.setState({modalIsOpen: false});
   },
   scrollRight(){
@@ -76,7 +77,7 @@ var App = React.createClass({
   },
 
   render() {
-    console.log("render app")
+    console.log(this.state.modalIsOpen)
     //loop over all the children routes and pass them propTypes
     var that = this
     var children = React.Children.map(this.props.children, function(child) {
