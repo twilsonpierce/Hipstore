@@ -12,9 +12,9 @@ const Nav = React.createClass({
     if(event.target.value.length === 0){
       this.props.closeModal();
     } else {
-      this.setState({itemName: event.target.value})
       this.props.openModal();
-      this.props.onChange(this.state.itemName)
+      this.setState({itemName: event.target.value})
+      this.props.onChange(event.target.value)
     }
   },
   handleReset: function (event){
