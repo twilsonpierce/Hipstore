@@ -8,7 +8,7 @@ const DisplayProduct = React.createClass({
       var category = "tech"
     }
     return (
-      <article className="modal1">
+      <article className="modal1 text-center">
         <Link to={"/category/" + category + "/" + this.props.itemName }><img className="modalImage" src={this.props.src} /></Link>
         <p>{this.props.itemName}</p>
       </article>

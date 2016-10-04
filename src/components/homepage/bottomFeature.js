@@ -9,14 +9,14 @@ const BottomFeature = React.createClass({
         itemDisplay.push(<DisplayProduct itemName={item.name} src={item.image[0]} key={i}/>)
     }
     return(
-    <div>
-      <button onClick={this.props.scrollLeft}>
+    <div className="container-fluid bottomFeature">
+      <button className="col-xs-1 scrollButtons" onClick={this.props.scrollLeft}>
         <i className="fa fa-chevron-left" aria-hidden="true" ></i>
       </button>
-      <div className="itemDirection">
+      <div className="itemDirection col-xs-10">
         {itemDisplay}
       </div>
-      <button onClick={this.props.scrollRight}>
+      <button className="col-xs-1 scrollButtons" onClick={this.props.scrollRight}>
         <i className="fa fa-chevron-right" aria-hidden="true"></i>
       </button>
     </div>
