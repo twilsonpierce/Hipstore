@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
 import './index.css';
 import './signup.css';
+import './product.css';
 
 //components 
 import Nav from './components/Nav'

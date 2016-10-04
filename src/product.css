@@ -1,0 +1,50 @@
+.detailContainer{
+  display:flex;
+  flex-direction: column;
+  width: 40%;
+}
+
+.contentContainer {
+  margin-top: 100px;
+}
+
+.itemTitle{
+  font-weight: bold;
+  flex-grow: 1;
+}
+
+.itemPrice{
+  text-align: center;
+  font-weight: bold;
+  
+}
+
+
+.itemDescription{
+  flex-grow: 1;
+
+}
+
+.itemHeading {
+  display: flex;
+}
+
+
+.itemDetail{
+  text-align: center;
+}
+
+.icon{
+  color:black;
+  
+}
+
+.stock{
+  text-align: center;
+}
+
+.btn-round-lg{
+border-radius: 22.5px;
+}
+
+
