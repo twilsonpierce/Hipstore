@@ -1,0 +1,14 @@
+.sign{
+  border: 3px red solid;
+  margin: 0 auto;
+  margin-top: 15%;
+  width:80%;
+  display: flex;
+  justify-content: space-around;
+}
+.sign > section{
+  width: 40%;
+}
+.signup{
+
+}
