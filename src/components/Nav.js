@@ -1,4 +1,5 @@
 import React from 'react'
+import ReactDOM from 'react-dom'
 import {Link} from 'react-router'
 import data from '../data'
 
@@ -7,6 +8,11 @@ const Nav = React.createClass({
     return {
       itemName: ''
     }
+  },
+  componentDidMount: function() {
+    setTimeout(function() {
+      ReactDOM.findDOMNode(this.refs["searchInput"]).focus();
+    }.bind(this), 0);
   },
   handleChange(event){
     if(event.target.value.length === 0){
@@ -39,7 +45,8 @@ const Nav = React.createClass({
           <div className="form-group">
             <input 
               type="text" 
-              className="form-control" 
+              className="form-control"
+              ref="searchInput" 
               placeholder="Search"
               onChange={this.handleChange}
               onKeyDown={this.handleReset} />
@@ -47,6 +54,9 @@ const Nav = React.createClass({
         </form>
         <ul className="nav navbar-nav col-xs-4 pull-right text-center">
           {links}
+          <li className="nav-item pull-right">
+            <i className="fa fa-suitcase" aria-hidden="true"></i>
+          </li>
         </ul>
         </div>
       </nav>

@@ -15,6 +15,7 @@ const customStyles = {
 
 var ModalElement = React.createClass({
 
+
   afterOpenModal() {
     // references are now sync'd and can be accessed.
     this.refs.subtitle.style.color = '#f00';
@@ -40,7 +41,7 @@ var ModalElement = React.createClass({
         if(item === undefined){
           continue;
         }
-        itemDisplay.push(<DisplayProduct src={item.image[0]} category={item.category} itemName={item.name} key={i}/>)
+        itemDisplay.push(<DisplayProduct category={item.category} src={item.image[0]} category={item.category} itemName={item.name} key={i}/>)
       }
     }
     return (

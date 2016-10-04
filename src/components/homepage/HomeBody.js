@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router'
 
 var HomeBody = React.createClass({
   render(){
@@ -11,12 +12,12 @@ var HomeBody = React.createClass({
           <h1>Featured Item</h1>
         </div>
         <div className="col-xs-3 thirdCont rounded">
-          <div className="newItems rounded">
+          <Link to="/category/other/Beard%20Grooming%20kit'"><div className="newItems rounded">
             <h1>Newest Item</h1>
-          </div>
+          </div></Link>
           <div className="rounded callToAction">
             <p>Sign up. We'll send you some guac.</p>
-            <button type="button" className="btn btn-default btn">Join Now!</button>
+            <Link to="/signup"><button type="button" className="btn btn-default btn">Join Now!</button></Link>
           </div>
         </div>
       </div>
