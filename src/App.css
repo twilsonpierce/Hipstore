@@ -19,6 +19,21 @@ body, html {
   justify-content: flex-end;
 }
 
+.mainLogo {
+  width: 100px;
+  height: 60px;
+  background-image: url('hipstore.png');
+  background-size: 100px 50px;
+  background-repeat: no-repeat;
+  margin: 10px 0 0 35px;
+}
+
+/*.navbarCont {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+}*/
+
 /*--------- /Navbar ----------*/
 
 /*--------- HomeBody ----------*/
@@ -243,6 +258,17 @@ a.presented {
   background-size: cover;
 }
 
+.fa-times {
+  font-size: 2em;
+  font-weight: 400;
+  color: #909060;
+  border: 1px solid #909060;
+  background-color: white;
+}
+.fa-times:hover {
+  color: white;
+  background-color: #909060;
+}
 
 /*---------Bottom feature----------*/
 

@@ -51,7 +51,7 @@ var ModalElement = React.createClass({
           onAfterOpen={this.afterOpenModal}
           onRequestClose={this.closeModal}
           style={customStyles}>
-          <button onClick={this.props.closeModal}>close</button>
+          <button className="fa fa-times pull-right" onClick={this.props.closeModal}></button>
           <h2 ref="subtitle">Search Results:</h2>
           <div className="modalDirection">
           {itemDisplay}
