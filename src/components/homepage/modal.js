@@ -36,7 +36,7 @@ var ModalElement = React.createClass({
   render: function() {
     let itemDisplay = []
     for (let i = 0; i < 6; i++){
-      itemDisplay.push(<DisplayProduct key={i}/>)
+      itemDisplay.push(<DisplayProduct itemName={this.props.filteredList[i]} key={i}/>)
     }
     return (
       <div>
