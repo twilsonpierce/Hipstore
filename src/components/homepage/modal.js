@@ -36,7 +36,7 @@ var ModalElement = React.createClass({
   render() {
     let itemDisplay = []
     if(this.props.modalState){  
-      for (let i = 0; i < 4; i++){
+      for (let i = 0; i < 6; i++){
         let item = this.props.filteredList[i]
         if(item === undefined){
           continue;
@@ -51,7 +51,7 @@ var ModalElement = React.createClass({
           onAfterOpen={this.afterOpenModal}
           onRequestClose={this.closeModal}
           style={customStyles}>
-          <button onClick={this.props.closeModal}>close</button>
+          <button className="fa fa-times pull-right" onClick={this.props.closeModal}></button>
           <h2 ref="subtitle">Search Results:</h2>
           <div className="modalDirection">
           {itemDisplay}

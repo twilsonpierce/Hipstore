@@ -39,9 +39,10 @@ const Nav = React.createClass({
     })
     return (
       <nav className="navbar navbar-fixed-top">
-        <div className="container-fluid">
-        <img src="hipstore.png" />
-        <form className="navbar-form pull-right col-xs-2">
+        <div className="container-fluid navbarCont">
+          <div className="mainLogo col-xs-3">
+          </div>
+          <form className="navbar-form pull-right col-xs-2">
           <div className="form-group">
             <input 
               type="text" 
@@ -51,7 +52,7 @@ const Nav = React.createClass({
               onChange={this.handleChange}
               onKeyDown={this.handleReset} />
           </div>
-        </form>
+          </form>
         <ul className="nav navbar-nav col-xs-4 pull-right text-center topNav">
           {links}
           <li className="nav-item pull-right">
