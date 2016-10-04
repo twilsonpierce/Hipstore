@@ -9,11 +9,15 @@ const Nav = React.createClass({
     }
   },
   handleChange(event){
+    if(event.target.value.length === 0){
+      console.log('enter')
+      this.props.closeModal();
+    }
     this.setState({itemName: event.target.value})
+    this.props.openModal();
     this.props.onChange(this.state.itemName)
   },
   handleReset: function (event){
-    this.props.openModal();
     if(event.key === "Backspace"){
       this.props.onReset()
     }

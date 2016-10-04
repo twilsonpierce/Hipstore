@@ -5,11 +5,10 @@ import BottomFeature from './components/homepage/bottomFeature'
 
 const HomePage = React.createClass({
   render() {
-    console.log(this.props)
     return (
       <div>
       <HomeBody />
-      <BottomFeature />
+      <BottomFeature scrollLeft={this.props.scrollLeft} scrollRight={this.props.scrollRight} data={this.props.data} bottomI={this.props.bottomFeatureI}/>
       <ModalElement modalState={this.props.modalIsOpen} closeModal={this.props.closeModal}/>
       </div>
     )

@@ -4,7 +4,6 @@ import {Router, Route, browserHistory, IndexRoute} from 'react-router';
 import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
 
-
 //components 
 import Nav from './components/Nav'
 import Footer from './components/Footer'
@@ -17,7 +16,16 @@ import data from './data'
 var App = React.createClass({
 
   getInitialState(){
-    return {data: data, listOfItems: '', filteredList: '', modalIsOpen: false, closeModal: this.closeModal }
+    return {
+      data: data, 
+      listOfItems: '', 
+      filteredList: '', 
+      modalIsOpen: false, 
+      closeModal: this.closeModal, 
+      scrollRight: this.scrollRight, 
+      scrollLeft: this.scrollLeft, 
+      bottomFeatureI: 0 
+    }
   },
 
   componentDidMount(){
@@ -37,6 +45,20 @@ var App = React.createClass({
   closeModal: function() {
     this.setState({modalIsOpen: false});
   },
+  scrollRight(){
+    if(this.state.bottomFeatureI === this.state.data.tech.length-4){
+      this.setState({bottomFeatureI: 0})
+    } else {
+      this.setState({bottomFeatureI: this.state.bottomFeatureI + 1})
+    }
+  },
+  scrollLeft(){
+    if(this.state.bottomFeatureI === 0){
+      this.setState({bottomFeatureI: this.state.data.tech.length-4})
+    } else {
+      this.setState({bottomFeatureI: this.state.bottomFeatureI - 1})
+    }
+  },
 
   handleItemSearch(item){
     function sameLetters(filteredListItem) {
@@ -54,6 +76,7 @@ var App = React.createClass({
   },
 
   render() {
+    console.log("render app")
     //loop over all the children routes and pass them propTypes
     var that = this
     var children = React.Children.map(this.props.children, function(child) {
@@ -61,7 +84,7 @@ var App = React.createClass({
     });
     return (
       <div>
-        <Nav onChange={this.handleItemSearch} onReset={this.handleSearchReset} openModal={this.openModal}/>
+        <Nav onChange={this.handleItemSearch} onReset={this.handleSearchReset} openModal={this.openModal} closeModal={this.closeModal}/>
         {children}
         <Footer />
       </div>

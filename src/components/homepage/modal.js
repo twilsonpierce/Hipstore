@@ -1,11 +1,12 @@
 import React from 'react'
 import Modal from 'react-modal';
-import ModalInput from './ModalInput';
+import DisplayProduct from './displayProduct';
 
 const customStyles = {
   content : {
-    top                   : '50%',
-    left                  : '50%',
+    top                   : '30%',
+    left                  : '20%',
+    width                 : '30%',
     right                 : 'auto',
     bottom                : 'auto',
     marginRight           : '-50%',
@@ -33,6 +34,10 @@ var ModalElement = React.createClass({
   },
 
   render: function() {
+    let itemDisplay = []
+    for (let i = 0; i < 6; i++){
+      itemDisplay.push(<DisplayProduct key={i}/>)
+    }
     return (
       <div>
         <Modal
@@ -42,7 +47,9 @@ var ModalElement = React.createClass({
           style={customStyles}>
 
           <h2 ref="subtitle">Search Results:</h2>
-          <ModalInput />
+          <div className="modalDirection">
+          {itemDisplay}
+          </div>
           <button onClick={this.closeModal}>close</button>
           <div>
           </div>
