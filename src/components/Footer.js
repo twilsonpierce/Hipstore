@@ -5,12 +5,17 @@ var Footer = React.createClass({
     return (
       <div className="margin">
         <hr />
-        <div className="container-fluid text-muted">
-          <div className="aboutHS col-xs-7">
+        <div className="container-fluid text-muted footerContent">
+          <div className="aboutHS col-xs-4">
             <h1 className="">About HipStore</h1>
             <p>Hip Store totally brings hip apparel and accessories from Brooklyn to San Francisco.</p>
           </div>
-          <div className="signUp col-xs-3">
+          <div className="footerCont col-xs-4">
+            <div className="footerLogo">
+
+            </div>
+          </div>
+          <div className="signUp col-xs-3 pull-right">
             <h3 className="">Want to stay up to date?</h3>
             <div className="input-group">
               <input type="email" className="form-control" placeholder="Email" />

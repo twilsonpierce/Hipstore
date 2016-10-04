@@ -32,7 +32,7 @@ const Nav = React.createClass({
     var links = Object.keys(data).map(function(category, i){
       return (
 
-        <li key={i} className="nav-item pull-right">
+        <li key={i} className="nav-item">
           <Link to={"/category/" + category}>{category.toUpperCase()}</Link>
         </li>
       )
@@ -40,7 +40,7 @@ const Nav = React.createClass({
     return (
       <nav className="navbar navbar-fixed-top">
         <div className="container-fluid">
-        <p className="navbar-brand col-xs-4"><Link to="/">hipstore</Link></p>
+        <img src="hipstore.png" />
         <form className="navbar-form pull-right col-xs-2">
           <div className="form-group">
             <input 
@@ -52,7 +52,7 @@ const Nav = React.createClass({
               onKeyDown={this.handleReset} />
           </div>
         </form>
-        <ul className="nav navbar-nav col-xs-4 pull-right text-center">
+        <ul className="nav navbar-nav col-xs-4 pull-right text-center topNav">
           {links}
           <li className="nav-item pull-right">
             <i className="fa fa-suitcase" aria-hidden="true"></i>
