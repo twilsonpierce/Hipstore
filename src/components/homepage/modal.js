@@ -4,46 +4,44 @@ import DisplayProduct from './displayProduct';
 
 const customStyles = {
   content : {
-    top                   : '30%',
-    left                  : '20%',
-    width                 : '30%',
-    right                 : 'auto',
-    bottom                : 'auto',
-    marginRight           : '-50%',
-    transform             : 'translate(-50%, -50%)'
+    top: '10%',
+    left: '5%',
+    width: '90%',
+    right: 'auto',
+    bottom: 'auto',
+    margin: 'auto'
   }
 };
 
 var ModalElement = React.createClass({
 
-  getInitialState: function() {
-    return { modalIsOpen: false };
-  },
-
-  openModal: function() {
-    this.setState({modalIsOpen: true});
-  },
-
-  afterOpenModal: function() {
+  afterOpenModal() {
     // references are now sync'd and can be accessed.
     this.refs.subtitle.style.color = '#f00';
   },
 
-  closeModal: function() {
-    this.setState({modalIsOpen: false});
+  findCategory(filteredItem){
+
+    for(let i = 0; i < this.props.filteredList.length; i++){
+    
+        var item = this.props.filteredList[i]
+        if(item.name === filteredItem){
+          return item;
+        }
+      
+    }
   },
 
-  render: function() {
-    // let category = null
-    // let filteredItem = this.props.data.map(function(cate){
-    //   cate.map(function(item){
-    //     if(item === )
-    //   })
-    // })
-
+  render() {
     let itemDisplay = []
-    for (let i = 0; i < 6; i++){
-      itemDisplay.push(<DisplayProduct itemName={this.props.filteredList[i]} key={i}/>)
+    if(this.props.modalState){  
+      for (let i = 0; i < 4; i++){
+        let item = this.props.filteredList[i]
+        if(item === undefined){
+          continue;
+        }
+        itemDisplay.push(<DisplayProduct src={item.image[0]} category={item.category} itemName={item.name} key={i}/>)
+      }
     }
     return (
       <div>
@@ -52,12 +50,12 @@ var ModalElement = React.createClass({
           onAfterOpen={this.afterOpenModal}
           onRequestClose={this.closeModal}
           style={customStyles}>
-
+          <button onClick={this.props.closeModal}>close</button>
           <h2 ref="subtitle">Search Results:</h2>
           <div className="modalDirection">
           {itemDisplay}
           </div>
-          <button onClick={this.closeModal}>close</button>
+
           <div>
           </div>
         </Modal>

@@ -19,7 +19,8 @@ var App = React.createClass({
     return {
       data: data, 
       listOfItems: '', 
-      filteredList: '', 
+      filteredList: '',
+      filteredData: null, 
       modalIsOpen: false, 
       closeModal: this.closeModal, 
       scrollRight: this.scrollRight, 
@@ -34,16 +35,16 @@ var App = React.createClass({
     var listOfItems = []
     Object.keys(data).map(function(category){
       return data[category].map(function(item){
-          listOfItems.push(item.name.toLowerCase())
+          listOfItems.push(item)
       })
     })
+
     this.setState({listOfItems: listOfItems, filteredList: listOfItems})
   },
   openModal: function() {
     this.setState({modalIsOpen: true});
   },
   closeModal: function() {
-    console.log("closed")
     this.setState({modalIsOpen: false});
   },
   scrollRight(){
@@ -62,22 +63,22 @@ var App = React.createClass({
   },
 
   handleItemSearch(item){
-    function sameLetters(filteredListItem) {
-      if(filteredListItem.indexOf(item) !== -1){
+
+    var searchItemsObjs = this.state.filteredList.filter(function(filteredListItem){
+      if(filteredListItem.name.toLowerCase().indexOf(item) !== -1){
         return filteredListItem
       }
-    }
-    var searchItems = this.state.filteredList.filter(
-    sameLetters)
+    })
+
     
-    this.setState({filteredList: searchItems})
+    this.setState({filteredList: searchItemsObjs})
   },
   handleSearchReset: function() {
     this.setState({filteredList: this.state.listOfItems})
   },
 
   render() {
-    console.log(this.state.modalIsOpen)
+    console.log(this.state.filteredList.length)
     //loop over all the children routes and pass them propTypes
     var that = this
     var children = React.Children.map(this.props.children, function(child) {
