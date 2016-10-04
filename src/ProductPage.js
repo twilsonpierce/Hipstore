@@ -12,7 +12,7 @@ const ProductPage = React.createClass({
   render:function(){
     return (
       <div>
-      	<h1>Products Page</h1> 
+      	<button >Add To Cart</button> 
       </div>
     )
   }

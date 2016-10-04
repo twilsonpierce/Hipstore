@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import {Router, Route, browserHistory, IndexRoute} from 'react-router';
 import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
+import './index.css';
 import './signup.css';
 
 //components 
@@ -27,7 +28,8 @@ var App = React.createClass({
       closeModal: this.closeModal, 
       scrollRight: this.scrollRight, 
       scrollLeft: this.scrollLeft, 
-      bottomFeatureI: 0 
+      bottomFeatureI: 0,
+      cart: [] 
     }
   },
 
@@ -43,10 +45,10 @@ var App = React.createClass({
 
     this.setState({listOfItems: listOfItems, filteredList: listOfItems})
   },
-  openModal: function() {
+  openModal() {
     this.setState({modalIsOpen: true});
   },
-  closeModal: function() {
+  closeModal() {
     this.setState({modalIsOpen: false});
   },
   scrollRight(){
@@ -75,8 +77,11 @@ var App = React.createClass({
     
     this.setState({filteredList: searchItemsObjs})
   },
-  handleSearchReset: function() {
+  handleSearchReset() {
     this.setState({filteredList: this.state.listOfItems})
+  },
+  addToCart(){
+
   },
 
   render() {
@@ -88,7 +93,7 @@ var App = React.createClass({
     });
     return (
       <div>
-        <Nav onChange={this.handleItemSearch} onReset={this.handleSearchReset} openModal={this.openModal} closeModal={this.closeModal}/>
+        <Nav onChange={this.handleItemSearch} onReset={this.handleSearchReset} openModal={this.openModal} closeModal={this.closeModal} cart={this.state.cart}/>
         {children}
         <Footer />
       </div>

@@ -2,17 +2,13 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import {Link} from 'react-router'
 import data from '../data'
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 const Nav = React.createClass({
   getInitialState(){
     return {
       itemName: ''
     }
-  },
-  componentDidMount: function() {
-    setTimeout(function() {
-      ReactDOM.findDOMNode(this.refs["searchInput"]).focus();
-    }.bind(this), 0);
   },
   handleChange(event){
     if(event.target.value.length === 0){
@@ -21,7 +17,11 @@ const Nav = React.createClass({
       this.props.openModal();
       this.setState({itemName: event.target.value})
       this.props.onChange(event.target.value)
+      setTimeout(() =>{
+        ReactDOM.findDOMNode(this.refs["searchInput"]).focus()
+      },100)
     }
+
   },
   handleReset: function (event){
     if(event.key === "Backspace"){
@@ -45,6 +45,7 @@ const Nav = React.createClass({
           <form className="navbar-form pull-right col-xs-2">
           <div className="form-group">
             <input 
+              key="search"
               type="text" 
               className="form-control"
               ref="searchInput" 
@@ -56,7 +57,7 @@ const Nav = React.createClass({
         <ul className="nav navbar-nav col-xs-4 pull-right text-center topNav">
           {links}
           <li className="nav-item pull-right">
-            <i className="fa fa-suitcase" aria-hidden="true"></i>
+          <button ><i className="fa fa-suitcase" aria-hidden="true"></i></button>
           </li>
         </ul>
         </div>
