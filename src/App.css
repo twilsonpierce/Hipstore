@@ -219,6 +219,12 @@ a.presented {
 
 
 /*---------Modal----------*/
+
+.modalDirection {
+  display: flex;
+  flex-direction: row;
+  width: 100%; 
+}
 .modal1 {
   display: flex;
   flex-direction: column;
