@@ -1,3 +1,5 @@
+/* -------------Category Page--------------- */
+
 .categoryPage{
   margin-top: 0%;
   display: flex;
@@ -35,20 +37,22 @@
   height: auto;
 }
 
+
+/*----------------Bottom Feature-----------------*/
 .bottomFeatureCont{
   position: relative;
 }
 
 .shape {
   width: 90%;
-  height: 400px;
+  height: 325px;
   transform: skew(10deg);
   background: #909060;
   position: absolute;
   z-index: -1;
   opacity: .4;
   margin: 0 auto; 
-  margin-top: 3%;
+  margin-top: 4%;
   margin-left: 5%;
 
 }
@@ -59,14 +63,14 @@
 
 .bottomFeature .modalImage {
   width: 200%;
-  height: 525px;
+  height: 505px;
   background-size: cover;
   transform: skew(-10deg) translate(-150px, 0);
 }
 
 
 .bottomFeature .modal1 {
-  height: 485px;
+  height: 405px;
   width: 400px;
   margin: 1%;
   transform: skew(10deg);
@@ -77,6 +81,8 @@
 .scrollButtons{
   padding: 0;
 }
+
+
 
 
 
