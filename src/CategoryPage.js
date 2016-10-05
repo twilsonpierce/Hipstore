@@ -11,11 +11,13 @@ const CategoryPage = React.createClass({
     })
 
     return (
-      <div className={"categoryPage " + this.props.params.category}>
-        <h3>{this.props.params.category.toUpperCase()}</h3>
-        <section className="productDisplay">
-           {products}
-        </section>
+      <div className={"categoryPage"}>
+        <div className={"" + this.props.params.category}>
+          <h3>{this.props.params.category.toUpperCase()}</h3>
+          <section className="productDisplay">
+             {products}
+          </section>
+        </div>
       </div>
     )
   }

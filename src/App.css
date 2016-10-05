@@ -50,9 +50,10 @@ a:hover {
 }
 
 button.btn.btn-default {
-  /*font-size: 1.5em;*/
+  font-size: 1em;
   color: #909060;
-  /*border: 1px solid #FF6138;*/
+  background-color: white;
+  /*border: 1px solid ;*/
   transition: 500ms;
 }
 button.btn.btn-default:hover {
@@ -109,11 +110,6 @@ button.btn.btn-default:hover {
   flex-direction: column;
 }
 
-/*.firstCont, .secondCont, 
-.callToAction, .newItems {
-  border: 3px solid #79BD8F;
-}*/
-
 div.newItems {
   height: 375px;
   background-image: url('http://www.cad-eauonline.com/wp-content/uploads/2015/04/MG_1161.jpg');
@@ -139,28 +135,19 @@ div.newItems {
   font-size: 1.7em;
 }
 
-.callToAction button {
-  font-size: 1.1em;
-  color: #FF6138;
-  /*border: 1px solid #FF6138;*/
-  transition: 500ms;
-  margin-top: 50px; 
-
+.callToAction .btn{
+  font-size: 1.5em;
 }
+
 .callToAction p {
   text-shadow: 1px 1px 1px #36454f;
 }
-.callToAction button:hover {
-  color: white;
-  border: 1px solid #FF6138;
-  background-color: #FF6138;
-}
-
 .rounded {
   border-radius: 2px;
 }
 
 /*--------- /HomeBody ----------*/
+
 
 
 /*--------- Footer ----------*/
