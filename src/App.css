@@ -3,6 +3,10 @@ body, html {
   /*background-color: #F0D8A8;*/
 }
 
+#root {
+  overflow: hidden;
+}
+
 /*--------- Navbar ----------*/
 .navbar {
   background-color: white;
@@ -27,7 +31,17 @@ body, html {
   background-repeat: no-repeat;
   margin: 10px 0 0 35px;
 }
+.nav > li > a:hover, .nav > li > a:focus {
+  background-color: white;
+}
 
+.navbar-nav button {
+  margin-top: 6px;
+  border: none;
+  color: #909060;
+  background-color: transparent;
+  font-size: 1.3em;
+}
 /*.navbarCont {
   display: flex;
   flex-direction: row;
@@ -50,12 +64,12 @@ a:hover {
 }
 
 button.btn.btn-default {
-  font-size: 1em;
+  /*font-size: 1em;*/
   color: #909060;
   background-color: white;
-  /*border: 1px solid ;*/
   transition: 500ms;
 }
+
 button.btn.btn-default:hover {
   color: white;
   border: 1px solid #909060;
@@ -120,12 +134,25 @@ div.newItems {
   /*color: #59D8E5;*/
   display: flex;
   justify-content: flex-end;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.thirdCont a{
+  color: white;
+}
+
+.thirdCont a:hover{
+  color: #909060;
+  text-decoration: none;
 }
 
 .newItems h1 {
   text-shadow: 1px 1px 1px #36454f;
   margin: 55px 20px 0 0;
+}
+
+.newItems h1:hover {
+  text-decoration: none;
 }
 
 .callToAction{
@@ -136,12 +163,12 @@ div.newItems {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-size: 1.7em;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  font-size: 1.5em;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .callToAction .btn{
-  font-size: 1.5em;
+  font-size: 1.2em;
 }
 
 .callToAction p {
