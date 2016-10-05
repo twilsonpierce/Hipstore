@@ -6,6 +6,7 @@ const HomePage = React.createClass({
   render() {
     return (
       <div>
+      <div className="homeShape">XXXXXX</div>
       <HomeBody />
       <BottomFeature scrollLeft={this.props.scrollLeft} scrollRight={this.props.scrollRight} data={this.props.data} bottomI={this.props.bottomFeatureI}/>
       </div>
