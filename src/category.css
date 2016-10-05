@@ -82,6 +82,18 @@
   padding: 0;
 }
 
+.homeShape{
+  background: #909060;
+  position: absolute;
+  z-index: -1;
+  opacity: .4;
+  margin-top: -150px;
+  width: 2000px;
+  height: 600px;
+  transform: rotate(8deg) translate(-10%);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
 
 
 

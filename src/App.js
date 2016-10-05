@@ -18,7 +18,7 @@ import Signup from './Signup'
 import data from './data'
 import ModalElement from './components/homepage/modal'
 
-var App = React.createClass({
+const App = React.createClass({
 
   getInitialState(){
     return {
@@ -42,7 +42,7 @@ var App = React.createClass({
   componentDidMount(){
 
     //create a list of all data items
-    var listOfItems = []
+    let listOfItems = []
     Object.keys(data).map(function(category){
       return data[category].map(function(item){
           listOfItems.push(item)
@@ -54,11 +54,8 @@ var App = React.createClass({
   openModal(event) {
 
     //check to see if the function call is from the search bar or cart click
-    if(event !== undefined){
-      this.setState({modalIsOpen: true, isCart:true});
-    } else {
-      this.setState({modalIsOpen: true, isCart:false});
-    }
+    let isCart = event !== undefined ? true : false
+      this.setState({modalIsOpen: true, isCart: isCart});
   },
   closeModal() {
     this.setState({modalIsOpen: false, isCart: false});
@@ -82,7 +79,7 @@ var App = React.createClass({
 
   handleItemSearch(item){
 
-    var searchItemsObjs = this.state.filteredList.filter(function(filteredListItem){
+    let searchItemsObjs = this.state.filteredList.filter(function(filteredListItem){
       if(filteredListItem.name.toLowerCase().indexOf(item) !== -1){
         return filteredListItem
       }
@@ -100,13 +97,10 @@ var App = React.createClass({
   signup(name){
     this.setState({username: name})
   },
-  cartLookUp(){
-
-  },
   render() {
     //loop over all the children routes and pass them propTypes
-    var that = this
-    var children = React.Children.map(this.props.children, function(child) {
+    let that = this
+    let children = React.Children.map(this.props.children, function(child) {
         return React.cloneElement(child, Object.assign({}, that.state));
     });
     console.log(this.state.isCart)
