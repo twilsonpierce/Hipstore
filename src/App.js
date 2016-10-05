@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import {Router, Route, browserHistory, IndexRoute} from 'react-router';
 import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
-import './index.css';
+import './category.css';
 import './signup.css';
 import './product.css';
 
