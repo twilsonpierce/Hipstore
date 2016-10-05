@@ -14,7 +14,7 @@ const customStyles = {
   }
 };
 
-var ModalElement = React.createClass({
+const ModalElement = React.createClass({
 
 
   afterOpenModal() {

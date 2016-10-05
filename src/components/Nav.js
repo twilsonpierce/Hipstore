@@ -28,7 +28,7 @@ const Nav = React.createClass({
     }
   },
   render: function() {
-    var links = Object.keys(this.props.data).map(function(category, i){
+    let links = Object.keys(this.props.data).map(function(category, i){
       return (
 
         <li key={i} className="nav-item">
