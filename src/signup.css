@@ -1,19 +1,74 @@
 .sign{
-  border: 3px red solid;
   margin: 0 auto;
-  margin-top: 15%;
-  width:80%;
+  width: 100%;
   display: flex;
   justify-content: space-around;
+  background: #909060;
 }
 .sign > section{
   width: 40%;
 }
-
-.sign h1{
-  color: red;
-  font-weight: 700;
+.signupImage {
+  width: 55%;
+  height: 100vh;
+  background-image: url('https://images.unsplash.com/photo-1473949103155-d89f3aa93cf1?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&s=b8d60f3a1c7c40f9981d2bb00e476559');
+  background-size: 150% 100%; 
+  background-repeat: no-repeat;
+  transform: translate(-5%);
+  box-shadow: 0 4px 50px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-.signup{
 
+.signupImage p {
+  font-size: 80px;
+  color: white;
+  width: 80%;
+  margin: 25% 0 0 15%;
+}
+
+.signup{
+  margin-top: 12%;
+  display: flex;
+  flex-direction: column; 
+}
+.sign h1{
+  font-weight: 700;
+  margin: 0;
+  color: white;
+  opacity: .8;
+}
+
+.inputField {
+  display: flex;
+  flex-direction: column;
+  font-size: 22px;
+}
+
+.signup input{
+  width: 80%;
+  font-size: 1.1em;
+  color: white;
+  opacity: .8;
+  border: none;
+  padding: 3% 0 2% 0;
+  border-bottom: 3px solid #484830;
+  background: transparent;
+}
+
+.signup input:focus{
+  outline: none;
+}
+
+.signupButtons{
+  margin-top: 5%;
+  display: flex;
+  width: 85%;
+  justify-content: space-between;
+}
+.signup button{
+  font-size: 1.25em;
+  width: 40%;
+}
+
+.signupButton2{
+  width:46% !important;
 }

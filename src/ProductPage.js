@@ -2,20 +2,32 @@ import React from 'react';
 
 
 var ProductPage = React.createClass({	
+  findItem(){
+    //find the image to display base off the params
+    let category = this.props.params.category;
+    let product = this.props.params.product;
+    let item = this.props.data[category].filter(function(item){
+        if(item.name === product){
+          return item;
+        }
+      })
+    return item
+  },
+  addItemToCart(){
+    let item = this.findItem()
+    this.props.addToCart(item)
+  },
   render: function(){
+
+    // display social media icons
     let socialMedia = ["twitter", "facebook", "tumblr", "pinterest"]
     let socialIcon = socialMedia.map(function(social,i){
       return (
         <a href="#" key={i} title={social}><i className={"fa fa-" + social}></i></a>
       )
     })
-    let category = this.props.params.category;
-  	let product = this.props.params.product;
-  	let item = this.props.data[category].filter(function(item){
-        if(item.name === product){
-    	 		return item;
-    	 	}
-      })
+    let item = this.findItem()
+
    	return (
       <div className="contentContainer">
 
@@ -38,7 +50,7 @@ var ProductPage = React.createClass({
           
             <div className="features detailRow">
             <button type="button"className=" btn btn-default">{"Qty:" + item[0].quantity}</button>
-            <button type="button"className="btn btn-default">Add To Bag</button>
+            <button onClick={this.addItemToCart} type="button"className="btn btn-default">Add To Bag</button>
           </div>
         </div>
 

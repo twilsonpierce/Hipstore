@@ -1,5 +1,5 @@
 import React from 'react'
-import CategoryDisplay from './components/homepage/categoryProductDisplay';
+import CategoryDisplay from './components/category/categoryProductDisplay';
 
 const CategoryPage = React.createClass({
 

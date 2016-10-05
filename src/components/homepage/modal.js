@@ -34,6 +34,7 @@ var ModalElement = React.createClass({
   },
 
   render() {
+    console.log(this.props)
     let itemDisplay = []
     if(this.props.modalState){  
       for (let i = 0; i < 6; i++){
