@@ -1,7 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import {Link} from 'react-router'
-import data from '../data'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 const Nav = React.createClass({
@@ -29,7 +28,7 @@ const Nav = React.createClass({
     }
   },
   render: function() {
-    var links = Object.keys(data).map(function(category, i){
+    var links = Object.keys(this.props.data).map(function(category, i){
       return (
 
         <li key={i} className="nav-item">
@@ -40,14 +39,14 @@ const Nav = React.createClass({
     return (
       <nav className="navbar navbar-fixed-top">
         <div className="container-fluid navbarCont">
-          <div className="mainLogo col-xs-3">
-          </div>
+          <Link to="/"><div className="mainLogo col-xs-3">
+          </div></Link>
           <form className="navbar-form pull-right col-xs-2">
           <div className="form-group">
             <input 
               key="search"
               type="text" 
-              className="form-control"
+              className="form-control searchInput"
               ref="searchInput" 
               placeholder="Search"
               onChange={this.handleChange}
@@ -55,9 +54,10 @@ const Nav = React.createClass({
           </div>
           </form>
         <ul className="nav navbar-nav col-xs-4 pull-right text-center topNav">
+          {(this.props.username) ? <li className="nav-item"><a>{"Hi, " + this.props.username}</a></li> : null}
           {links}
           <li className="nav-item pull-right">
-          <button ><i className="fa fa-suitcase" aria-hidden="true"></i></button>
+          <button onClick={this.props.openModal}><i className="fa fa-suitcase" aria-hidden="true"></i></button>
           </li>
         </ul>
         </div>

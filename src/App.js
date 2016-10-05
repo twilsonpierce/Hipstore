@@ -3,8 +3,9 @@ import ReactDOM from 'react-dom';
 import {Router, Route, browserHistory, IndexRoute} from 'react-router';
 import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
-import './index.css';
+import './category.css';
 import './signup.css';
+import './product.css';
 
 //components 
 import Nav from './components/Nav'
@@ -15,6 +16,7 @@ import CategoryPage from './CategoryPage'
 import ProductPage from './ProductPage'
 import Signup from './Signup'
 import data from './data'
+import ModalElement from './components/homepage/modal'
 
 var App = React.createClass({
 
@@ -27,9 +29,13 @@ var App = React.createClass({
       modalIsOpen: false, 
       closeModal: this.closeModal, 
       scrollRight: this.scrollRight, 
-      scrollLeft: this.scrollLeft, 
+      scrollLeft: this.scrollLeft,
+      signup: this.signup, 
       bottomFeatureI: 0,
-      cart: [] 
+      cart: [], 
+      isCart: false,
+      username: "", 
+      addToCart: this.addToCart,
     }
   },
 
@@ -45,11 +51,19 @@ var App = React.createClass({
 
     this.setState({listOfItems: listOfItems, filteredList: listOfItems})
   },
-  openModal() {
-    this.setState({modalIsOpen: true});
+  openModal(event) {
+
+    //check to see if the function call is from the search bar or cart click
+    if(event !== undefined){
+      this.setState({modalIsOpen: true, isCart:true});
+    } else {
+      this.setState({modalIsOpen: true, isCart:false});
+    }
   },
   closeModal() {
-    this.setState({modalIsOpen: false});
+    this.setState({modalIsOpen: false, isCart: false});
+    document.querySelector('.searchInput').value = ""
+
   },
   scrollRight(){
     if(this.state.bottomFeatureI === this.state.data.tech.length-4){
@@ -74,27 +88,39 @@ var App = React.createClass({
       }
     })
 
-    
     this.setState({filteredList: searchItemsObjs})
   },
   handleSearchReset() {
     this.setState({filteredList: this.state.listOfItems})
   },
-  addToCart(){
+  addToCart(item){
+    console.log("cart enter", item)
+    this.setState({cart: this.state.cart.concat(item)})
+  },
+  signup(name){
+    this.setState({username: name})
+  },
+  cartLookUp(){
 
   },
-
   render() {
-    console.log(this.state.filteredList.length)
     //loop over all the children routes and pass them propTypes
     var that = this
     var children = React.Children.map(this.props.children, function(child) {
         return React.cloneElement(child, Object.assign({}, that.state));
     });
+    console.log(this.state.isCart)
     return (
       <div>
-        <Nav onChange={this.handleItemSearch} onReset={this.handleSearchReset} openModal={this.openModal} closeModal={this.closeModal} cart={this.state.cart}/>
+        <Nav data={this.state.data} onChange={this.handleItemSearch} onReset={this.handleSearchReset} openModal={this.openModal} closeModal={this.closeModal} cart={this.state.cart} username={this.state.username} cartLookUp={this.cartLookUp}/>
         {children}
+        <ModalElement 
+          data={this.state.data} 
+          filteredList={this.state.filteredList}
+          modalState={this.state.modalIsOpen}
+          closeModal={this.closeModal}
+          isCart={this.state.isCart}
+          cart={this.state.cart}/>
         <Footer />
       </div>
     )
