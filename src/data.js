@@ -2,7 +2,7 @@ const data = {
 
   apparel: [{name: 'All Black Beanie', image: ['https://s-media-cache-ak0.pinimg.com/564x/cd/ec/75/cdec7586d503e4b90a9bc6c39286b25f.jpg'], price: 9.99, description: 'HipStore Hats', quantity: 50, rating: 4.0, category: "apparel"},
       
-      {name: 'Idk, Google It ', image: ['https://img1.etsystatic.com/067/0/11131067/il_570xN.790990333_kngx.jpg'], price: 14.99, description: 'hipStore Graphic Tee',quantity: 35, rating: 3.5, category: "apparel"},
+      {name: 'Idk, Google It ', image: ['https://img1.etsystatic.com/067/0/11131067/il_570xN.790990333_kngx.jpg'], price: 14.99, description: 'hipstore Graphic Tee',quantity: 35, rating: 3.5, category: "apparel"},
       
       {name: 'Plaid shirt with sleeves rolled up',image: ['http://d.looklive.com/N3yMUPHUxGW_nk6xQt-aVJBa56I=/76x44:1062x1030/filters:extend():watermark(20ce9879-6197-4286-bbf8-171853bd3dee,736,1301,10)/f5df592a-fe5e-4777-a912-9590af4be4c4'], price: 45.00, 
       description: "We know you're tired of rolling up your sleeves. That's why we already did it for you.",quantity: 15,rating: 4.8, category: "apparel"},
