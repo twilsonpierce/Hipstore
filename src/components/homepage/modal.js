@@ -9,7 +9,8 @@ const customStyles = {
     width: '90%',
     right: 'auto',
     bottom: 'auto',
-    margin: 'auto'
+    margin: 'auto',
+    background: 'rgba(240,216,168,.3)'
   }
 };
 
@@ -34,28 +35,35 @@ var ModalElement = React.createClass({
   },
 
   render() {
-    console.log(this.props)
     let itemDisplay = []
-    if(this.props.modalState){  
+    let cartDisplay = null
+    if(this.props.modalState && !this.props.isCart){  
       for (let i = 0; i < 6; i++){
         let item = this.props.filteredList[i]
         if(item === undefined){
           continue;
         }
-        itemDisplay.push(<DisplayProduct category={item.category} src={item.image[0]} category={item.category} itemName={item.name} key={i}/>)
+        itemDisplay.push(<DisplayProduct category={item.category} src={item.image[0]} itemName={item.name} key={i} closeModal={this.props.closeModal}/>)
       }
+    } else if(this.props.modalState && this.props.isCart){
+      cartDisplay = this.props.cart.map(function(item,i){
+        console.log(item)
+        return <DisplayProduct category={item.category} src={item.image[0]} itemName={item.name} price={item.price} key={i} closeModal={this.props.closeModal}/>
+      })
+    console.log(cartDisplay)
     }
     return (
       <div>
         <Modal
           isOpen={this.props.modalState}
           onAfterOpen={this.afterOpenModal}
-          onRequestClose={this.closeModal}
           style={customStyles}>
+
           <button className="fa fa-times pull-right" onClick={this.props.closeModal}></button>
-          <h2 ref="subtitle">Search Results:</h2>
+          <h2 ref="subtitle">{this.props.isCart ? "Items In Cart:" : "Search Results:"}</h2>
           <div className="modalDirection">
-          {itemDisplay}
+
+          {cartDisplay ? cartDisplay : itemDisplay}
           </div>
 
           <div>

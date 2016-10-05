@@ -46,7 +46,7 @@ const Nav = React.createClass({
             <input 
               key="search"
               type="text" 
-              className="form-control"
+              className="form-control searchInput"
               ref="searchInput" 
               placeholder="Search"
               onChange={this.handleChange}
