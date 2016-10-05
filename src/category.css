@@ -101,7 +101,7 @@
 .homeShape{
   background: #909060;
   position: absolute;
-  z-index: -1;
+  /*z-index: -1;*/
   opacity: .4;
   margin-top: -150px;
   width: 2000px;
