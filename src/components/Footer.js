@@ -7,15 +7,22 @@ const Footer = React.createClass({
       <div className="margin">
         <hr />
         <div className="container-fluid text-muted footerContent">
+
+
+
+
+
+         <div className="wrapper">
+
+
           <div className="aboutHS col-xs-4">
             <h1 className="">About HipStore</h1>
             <p>Hip Store totally brings hip apparel and accessories from Brooklyn to San Francisco.</p>
           </div>
           <div className="footerCont col-xs-4">
-            <div className="footerLogo">
-
-            </div>
+            <div className="footerLogo"></div>
           </div>
+
           <div className="signUp col-xs-3 pull-right">
             <h3 className="">Want to stay up to date?</h3>
             <div className="input-group">
@@ -23,7 +30,9 @@ const Footer = React.createClass({
               <span className="input-group-btn">
                 <Link to="/signup"><button className="btn btn-default" type="button">Sign up</button></Link>
               </span>
+              </div>
             </div>
+
           </div>
         </div>
         <hr />

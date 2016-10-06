@@ -86,21 +86,21 @@ body{
   height: auto;
 }
 
-.apparel{
+/*.apparel{
   background-image: url('../images/apparel.jpg');
   background-repeat: no-repeat;
-  /*background-attachment: fixed;*/
-  margin: 100px 0 0 100px;
-  /*background-color: red;*/
+  background-attachment: fixed;
+ margin: 100px 0 0 100px;
+  background-color: red;
 
 }
 
 .tech {
   background-image: url('../images/tech.jpg');
   background-repeat: no-repeat;
-  /*background-attachment: fixed;*/
+  background-attachment: fixed;
   padding: 100px 0 0 100px;
-}
+}*/
 
 
 
@@ -142,9 +142,9 @@ body{
   transform: skew(-10deg) translate(-150px, 0);
 }
 
-.bottomFeature .modal1:hover {
+/*.bottomFeature .modal1:hover {
   transform: scale(1.05) skew(10deg);
-}
+}*/
 
 
 .scrollButtons{
