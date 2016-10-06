@@ -25,7 +25,6 @@ body{
   background: white;
   font-family: 'Raleway', sans-serif;
   padding-top: 20px;
-
 }
 .categoryPage h3 {
   margin-top: 5%;
@@ -85,6 +84,22 @@ body{
 .categoryProduct img {
   width: 100%;
   height: auto;
+}
+
+.apparel{
+  background-image: url('../images/apparel.jpg');
+  background-repeat: no-repeat;
+  /*background-attachment: fixed;*/
+  margin: 100px 0 0 100px;
+  /*background-color: red;*/
+
+}
+
+.tech {
+  background-image: url('../images/tech.jpg');
+  background-repeat: no-repeat;
+  /*background-attachment: fixed;*/
+  padding: 100px 0 0 100px;
 }
 
 

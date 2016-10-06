@@ -23,7 +23,6 @@ const CategoryPage = React.createClass({
 
         <div className="browndash">
         </div>
-
       </div>
       )
   }
