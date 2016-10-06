@@ -3,14 +3,6 @@ body, html {
   /*background-color: #F0D8A8;*/
 }
 
-#root {
-  overflow: hidden;
-}
-
-/*.overFlowFix {
-  overflow: hidden;
-}*/
-
 /*--------- Navbar ----------*/
 .navbar {
   background-color: white;
