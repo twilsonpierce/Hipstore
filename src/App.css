@@ -27,7 +27,17 @@ body, html {
   background-repeat: no-repeat;
   margin: 10px 0 0 35px;
 }
+.nav > li > a:hover, .nav > li > a:focus {
+  background-color: white;
+}
 
+.navbar-nav button {
+  margin-top: 6px;
+  border: none;
+  color: #909060;
+  background-color: transparent;
+  font-size: 1.3em;
+}
 /*.navbarCont {
   display: flex;
   flex-direction: row;
@@ -50,11 +60,12 @@ a:hover {
 }
 
 button.btn.btn-default {
-  /*font-size: 1.5em;*/
+  /*font-size: 1em;*/
   color: #909060;
-  /*border: 1px solid #FF6138;*/
+  background-color: white;
   transition: 500ms;
 }
+
 button.btn.btn-default:hover {
   color: white;
   border: 1px solid #909060;
@@ -112,11 +123,6 @@ button.btn.btn-default:hover {
 
 }
 
-/*.firstCont, .secondCont, 
-.callToAction, .newItems {
-  border: 3px solid #79BD8F;
-}*/
-
 div.newItems {
   height: 375px;
   background-image: url('http://www.cad-eauonline.com/wp-content/uploads/2015/04/MG_1161.jpg');
@@ -124,12 +130,25 @@ div.newItems {
   /*color: #59D8E5;*/
   display: flex;
   justify-content: flex-end;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.thirdCont a{
+  color: white;
+}
+
+.thirdCont a:hover{
+  color: #909060;
+  text-decoration: none;
 }
 
 .newItems h1 {
   text-shadow: 1px 1px 1px #36454f;
   margin: 55px 20px 0 0;
+}
+
+.newItems h1:hover {
+  text-decoration: none;
 }
 
 .callToAction{
@@ -140,32 +159,23 @@ div.newItems {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-size: 1.7em;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  font-size: 1.5em;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.callToAction button {
-  font-size: 1.1em;
-  color: #FF6138;
-  /*border: 1px solid #FF6138;*/
-  transition: 500ms;
-  margin-top: 50px; 
-
+.callToAction .btn{
+  font-size: 1.2em;
 }
+
 .callToAction p {
   text-shadow: 1px 1px 1px #36454f;
 }
-.callToAction button:hover {
-  color: white;
-  border: 1px solid #FF6138;
-  background-color: #FF6138;
-}
-
 .rounded {
   border-radius: 2px;
 }
 
 /*--------- /HomeBody ----------*/
+
 
 
 /*--------- Footer ----------*/

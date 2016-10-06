@@ -4,7 +4,7 @@
   margin-top: 0%;
   display: flex;
   flex-direction: column;
-  background: brown;
+  background:;
 
 }
 .categoryPage h3 {
@@ -35,6 +35,22 @@
 .categoryProduct img {
   width: 100%;
   height: auto;
+}
+
+.apparel{
+  background-image: url('../images/apparel.jpg');
+  background-repeat: no-repeat;
+  /*background-attachment: fixed;*/
+  margin: 100px 0 0 100px;
+  /*background-color: red;*/
+
+}
+
+.tech {
+  background-image: url('../images/tech.jpg');
+  background-repeat: no-repeat;
+  /*background-attachment: fixed;*/
+  padding: 100px 0 0 100px;
 }
 
 
@@ -85,7 +101,7 @@
 .homeShape{
   background: #909060;
   position: absolute;
-  z-index: -1;
+  /*z-index: -1;*/
   opacity: .4;
   margin-top: -150px;
   width: 2000px;
