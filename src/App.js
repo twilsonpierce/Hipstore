@@ -37,7 +37,7 @@ var App = React.createClass({
       bottomFeatureI: 0,
       cart: [], 
       isCart: false,
-      username: "sign-up", 
+      username: "signup", 
       addToCart: this.addToCart,
     }
   },
