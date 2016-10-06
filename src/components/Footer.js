@@ -1,7 +1,8 @@
 import React from 'react'
+import {Link} from 'react-router'
 
-var Footer = React.createClass({
-  render: function(){
+const Footer = React.createClass({
+  render(){
     return (
       <div className="margin">
         <hr />
@@ -24,12 +25,11 @@ var Footer = React.createClass({
 
           <div className="signUp col-xs-3 pull-right">
             <h3 className="">Want to stay up to date?</h3>
-           
-              <div className="input-group">
-                <input type="email" className="form-control" placeholder="Email" />
-                <span className="input-group-btn">
-                  <button className="btn btn-default" type="button">Sign up</button>
-                </span>
+            <div className="input-group">
+              <input type="email" className="form-control" placeholder="Email" />
+              <span className="input-group-btn">
+                <Link to="/signup"><button className="btn btn-default" type="button">Sign up</button></Link>
+              </span>
               </div>
             </div>
 
