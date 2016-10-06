@@ -39,18 +39,24 @@ var ProductPage = React.createClass({
             <div className="itemTitle">{item[0].name}</div>
             <div className="itemPrice">{"$" + item[0].price}</div>
          </div>
-
+         <br/>
           <div className="itemDescription detailRow">
+        
             <p className="itemDetail ">{item[0].description}</p>
           </div>
+
+          <div className="rating">
+              <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+            </div>
 
           <div className="icon detailRow">
             {socialIcon}
           </div>
-          
+        
             <div className="features detailRow">
             <button type="button"className=" btn btn-default">{"Qty:" + item[0].quantity}</button>
-            <button onClick={this.addItemToCart} type="button"className="btn btn-default">Add To Bag</button>
+            <button onClick={this.addItemToCart} type="button"className="btn btn-default" id="targbut">Add To Bag</button>
+
           </div>
         </div>
 
