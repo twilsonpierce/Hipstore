@@ -3,10 +3,11 @@
   width: 100%;
   display: flex;
   justify-content: space-around;
-  background: #909060;
+  margin-top: -10%;
 }
 .sign > section{
   width: 40%;
+  background: #909060;
 }
 .signupImage {
   width: 55%;
@@ -16,6 +17,8 @@
   background-repeat: no-repeat;
   transform: translate(-5%);
   box-shadow: 0 4px 50px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  z-index: -1;
+  margin: 0;
 }
 
 .signupImage p {
@@ -23,6 +26,7 @@
   color: white;
   width: 80%;
   margin: 25% 0 0 15%;
+
 }
 
 .signup{
