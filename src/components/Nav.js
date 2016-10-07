@@ -38,7 +38,9 @@ const Nav = React.createClass({
       )
     })
     return (
-      <header style={{"zIndex": 10000, position: "fixed"}}>
+      <header >
+        <div className="topNav"></div>
+        <Sticky stickyStyle={{"zIndex": 10000}}> 
           <div className="navFlag">
           <section className="navCont">
             <ul className="linkContainer">
@@ -62,13 +64,13 @@ const Nav = React.createClass({
             </ReactCSSTransitionGroup>
           </section>
           <article className="hipstoreFlag">
-            <div className="flag"><img src="http://st.depositphotos.com/1280399/2546/i/950/depositphotos_25461693-Dirty-white-leather-texture.jpg" /></div>
+            <img src={require("../images/hipstore_flag.png")} />
             <Link to="/">
               <div className="mainLogoSticky"></div>
             </Link>
           </article>
           </div>
-  
+        </Sticky>
       </header>
     )
   }

@@ -1,0 +1,124 @@
+header{
+  z-index: 10000; 
+}
+
+.fixed {
+  position: fixed;
+  top: 0;
+}
+
+.topNav{
+  border: 1px solid blue; 
+  height: 75px;
+  padding: 5%;
+}
+
+.topNav img {
+  width: 100%;
+  transform: translate(0, -80%);
+}
+
+.navCont {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 5%;
+  background: white;
+  position: absolute;
+  top:0;
+  height: 70px;
+  width: 100vw;
+  opacity: .8;
+}
+
+.hipstoreFlag{
+  width: 16vw;
+  margin-left: 6vw;
+}
+
+.mainLogoSticky{
+  width: 100px;
+  height: 60px;
+  margin: 0 auto;
+  margin-top: -40%;
+  transform: scale(1.5);
+}
+
+.linkContainer{
+  display: flex;
+  justify-content: flex-end;
+  width:35vw;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+
+.link {
+  padding: 0 3%;
+  width: 30%;
+  text-decoration: none;
+  font-family: maxReg;
+  font-size: 2.2em;
+  line-height: 2em;
+  margin: 0;
+}
+
+/*.nameLink{
+  width: 250px;
+  line-height: 1em;
+}*/
+
+.suitcase{
+  border: none;
+  background: transparent;
+  color: #484830;
+}
+
+.searchBar {
+  width: 20vw;
+}
+
+.searchInput{
+  width: 100%;
+  font-size: 1.7em;
+  transform: translate(0,50%);
+}
+
+.searchGrow-enter {
+  opacity: 0.01;
+  left: 100%;
+}
+.searchGrow-enter.searchGrow-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease;
+  left: 0;
+}
+.navbar {
+  background-color: white;
+  font-size: 1.2em;
+}
+
+.navbar-brand {
+  padding-left: 55px;
+  font-size: 1.2em;
+}
+
+.container-fluid .topNav {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.nav > li > a:hover, .nav > li > a:focus {
+  background-color: white;
+}
+
+.navbar-nav button {
+  margin-top: 6px;
+  border: none;
+  color: #909060;
+  background-color: transparent;
+  font-size: 1.3em;
+}
+
+
+/*--------- /Navbar ----------*/

@@ -5,10 +5,7 @@ import { StickyContainer} from 'react-sticky';
 
 //css
 import 'bootstrap/dist/css/bootstrap.css';
-import './App.css';
-import './category.css';
-import './signup.css';
-import './product.css';
+import './css/App.css';
 
 //components 
 import Nav from './components/Nav'
@@ -99,7 +96,6 @@ var App = React.createClass({
     var children = React.Children.map(this.props.children, function(child) {
         return React.cloneElement(child, Object.assign({}, that.state));
     });
-    console.log(this.state.isCart)
     return (
       <div>
         <StickyContainer>
