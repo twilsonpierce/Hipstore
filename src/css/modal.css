@@ -1,3 +1,13 @@
+.content {
+  top: 10%;
+  left: 5%;
+  width: 90%;
+  right: auto;
+  bottom: auto;
+  margin: auto;
+  background: rgba(240,216,168,.3);
+}
+
 .modalDirection {
   display: flex;
   flex-direction: row;
