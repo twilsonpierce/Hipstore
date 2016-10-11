@@ -56,49 +56,53 @@
 }
 
 /*--------------------- Main Nav -----------------*/
-.customSticky{
+.navSticky{
   z-index: 10000;
+  justify-content: flex-end;
+  padding-left: 20vw; 
+  width: 40vw;
+  height: 100px;
 }
 
 .navCont {
-  display: flex;
-  border: 1px red blue;
-  justify-content: flex-end;
-  padding: 0 5%;
-  background: rgba(255,255,255, .8);
-  height: 80px;
   width: 100vw;
+  background: rgba(255,255,255, .8);
   margin: 0;
 }
 
-.stickyLogo{
+.logo {
+  position: absolute;
+  bottom: 15px;
+  width: 16vw;
+}
+
+.stickyLogo {
+  z-index: 300000000;
+}*/
+
+.mainLogo{
   z-index: 300000000;
   width: 16vw;
   height: auto;
 }
 
-/*.mainLogoSticky{
-  width: 16vw;
-  height: auto;
-}*/
-.mainLogoSticky img {
+.mainLogo img {
   width:100%;
   height: auto;
 }
 
 .linkContainer{
   display: flex;
-  justify-content: flex-end;
-  width:35vw;
+  justify-content: space-around;
   list-style: none;
   padding: 0;
   margin: 0;
+  padding: 0 5%;
+ 
 }
 
 
 .link {
-  padding: 0 3%;
-  width: 30%;
   text-decoration: none;
   font-family: maxReg;
   font-size: 2.2em;
@@ -126,7 +130,6 @@
   border: none;
   position: relative;
   right: 0;
-  width: 90%;
   padding: 0;
   font-family: maxReg;
   font-size: 2.2em;

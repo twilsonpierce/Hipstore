@@ -4,7 +4,6 @@ import {Link} from 'react-router';
 
 const DisplayProduct = React.createClass({
   render: function(){
-    console.log(this.props.price)
     var category = this.props.category === undefined ? "tech" : this.props.category
     return (
       <article className={"modal1 text-center"}>

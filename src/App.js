@@ -86,7 +86,25 @@ var App = React.createClass({
     this.setState({filteredList: this.state.listOfItems})
   },
   addToCart(item, event){
-    this.setState({cart: this.state.cart.concat(item)})
+      if (this.state.cart.length === 0) {
+        let item = item[0];
+        this.setState({cart: [{item, quantity:1}] })
+      } else {
+
+      let addToQuantity = this.state.cart.map(function (itemInCart){
+        console.log(itemInCart)
+          if(itemInCart.name === item.name){
+            console.log("same", itemInCart.quantity)
+            return {itemInCart, quantity: itemInCart.quantity + 1}
+          } else {
+            console.log("different")
+            return {itemInCart, quantity: 1}
+          }
+        })
+        this.setState({cart: addToQuantity})
+      }
+    
+
     this.openModal(event)
     setTimeout(() =>{
       this.closeModal();
@@ -106,9 +124,10 @@ var App = React.createClass({
     var children = React.Children.map(this.props.children, function(child) {
         return React.cloneElement(child, Object.assign({}, that.state));
     });
-    console.log(Object.keys(this.props.params).length)
+
+    //display the top nav only on the homepage
     var isHomepage = Object.keys(this.props.params).length === 0 ? true : false
-    console.log(isHomepage)
+    console.log("cart app", this.state.cart)
     return (
       <div>
         <StickyContainer>

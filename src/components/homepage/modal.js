@@ -2,18 +2,6 @@ import React from 'react'
 import Modal from 'react-modal';
 import DisplayProduct from './displayProduct';
 
-const customStyles = {
-  content : {
-    top: '10%',
-    left: '5%',
-    width: '90%',
-    right: 'auto',
-    bottom: 'auto',
-    margin: 'auto',
-    background: 'rgba(240,216,168,.3)'
-  }
-};
-
 var ModalElement = React.createClass({
 
 
@@ -50,9 +38,9 @@ var ModalElement = React.createClass({
     } else if(this.props.modalState && this.props.isCart){
       let that = this;
       cartDisplay = this.props.cart.map(function(item,i){
-        return <DisplayProduct category={item.category} src={item.image[0]} itemName={item.name} price={item.price}key={i} closeModal={that.props.closeModal}/>
+        console.log(item)
+        return <DisplayProduct category={item.category} src={item.item.image[0]} itemName={item.item.name} price={item.item.price}key={i} closeModal={that.props.closeModal}/>
       })
-    console.log(cartDisplay)
     }
     return (
       <div className="content">

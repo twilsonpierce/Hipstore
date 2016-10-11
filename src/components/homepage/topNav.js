@@ -5,22 +5,22 @@ import TopNavBack from './topNavBack';
 
 const TopNav = React.createClass({
   render(){
-    console.log(this.props.homepage)
     var titleBox = this.props.homepage ? <TopNavBack/> : null
     return (
       <div className={"topNav " + (this.props.homepage ? "homeTitle" : null)}>
         {titleBox}
-        <Sticky className="stickyLogo" stickyStyle={{width: "15vw", marginTop: "0px", paddingTop: '1%', paddingLeft: '2%'}}
-        style={{marginTop: "0px"}} topOffset={600}>
+        <div className="logo">
+          <Sticky className="mainLogo" stickyClassName="stickyLogo" >
             <Link to="/">
-              <div className="mainLogoSticky">
-                <img className=""src={require("../../images/hipstore.png")} />
-              </div>
+              <img alt="hipstore_logo" src={require("../../images/hipstore.png")} />
             </Link>
-        </Sticky>
+          </Sticky>
+        </div>
       </div>
     )
   }
 })
 
 export default TopNav
+
+// topOffset={this.props.homepage ? 600 : 0}
