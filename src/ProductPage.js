@@ -1,7 +1,16 @@
 import React from 'react';
+// import StarRatingComponent from 'react-star-rating-component';
+import ReactStars from 'react-stars';
 
 
 var ProductPage = React.createClass({	
+  //Getting the ratings from users 
+  getInitialState:function(){
+    return({rating: 0})
+  },
+  handleChange:function(newRating){
+    this.setState({rating:newRating});
+  },
   findItem(){
     //find the image to display base off the params
     let category = this.props.params.category;
@@ -18,6 +27,8 @@ var ProductPage = React.createClass({
     this.props.addToCart(item)
   },
   render: function(){
+    console.log(this.state, 'this is the state');
+    console.log(this.handleChange, 'this is the onClick function')
 
     // display social media icons
     let socialMedia = ["twitter", "facebook", "tumblr", "pinterest"]
@@ -35,19 +46,29 @@ var ProductPage = React.createClass({
 
 
         <div className="detailContainer col-xs-6">
+
         	<div className="detailRow itemHeading">
             <div className="itemTitle">{item[0].name}</div>
             <div className="itemPrice">{"$" + item[0].price}</div>
-         </div>
-         <br/>
+          </div>
+
+          <br/>
+
           <div className="itemDescription detailRow">
         
             <p className="itemDetail ">{item[0].description}</p>
           </div>
 
+
           <div className="rating">
-              <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
-            </div>
+            <ReactStars count={5}
+             onChange={this.handleChange}
+              size={24}
+              color2={'#ffd700'}
+              />
+          </div>
+
+
 
           <div className="icon detailRow">
             {socialIcon}
