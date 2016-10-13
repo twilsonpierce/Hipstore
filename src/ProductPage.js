@@ -1,9 +1,8 @@
 import React from 'react';
-// import StarRatingComponent from 'react-star-rating-component';
-import ReactStars from 'react-stars';
+import StarRatingComponent from 'react-star-rating-component';
 
 
-var ProductPage = React.createClass({	
+const ProductPage = React.createClass({	
   //Getting the ratings from users 
   getInitialState:function(){
     return({rating: 0})
@@ -27,15 +26,24 @@ var ProductPage = React.createClass({
     let item = this.findItem()
     this.props.addToCart(item, event)
   },
+  onStarClick(nextValue, prevValue, name) {
+      this.setState({rating: nextValue});
+  },
   render: function(){
     console.log(this.state, 'this is the state');
     console.log(this.handleChange, 'this is the onClick function')
+    console.log(this.state.rating)
 
     // display social media icons
     let socialMedia = ["twitter", "facebook", "tumblr", "pinterest"]
     let socialIcon = socialMedia.map((social,i) =>
       <a href="#" key={i} title={social}><i className={"fa fa-" + social}></i></a>
     )
+
+    let dropdown = []
+    for(var i = 1; i < 6; i++){
+      dropdown.push(<option key={i} value={i}>{i}</option>)
+    }
 
     let item = this.findItem()
    	return (
@@ -60,11 +68,12 @@ var ProductPage = React.createClass({
 
 
           <div className="rating">
-            <ReactStars count={5}
-             onChange={this.handleChange}
-              size={24}
-              color2={'#ffd700'}
-              />
+                <StarRatingComponent 
+                    name="rate1" 
+                    value={this.state.rating}
+                    onStarClick={this.onStarClick}
+                />
+              {this.state.rating ? <span>"Thanks for rating"</span> : null}
           </div>
 
 
@@ -74,7 +83,9 @@ var ProductPage = React.createClass({
           </div>
         
             <div className="features detailRow">
-            <button type="button"className="btn btn-default">{"Qty:" + item[0].quantity}</button>
+            <select>
+              {dropdown}
+            </select>
             <button onClick={this.addItemToCart} type="button"className="btn btn-default" id="targbut">Add To Bag</button>
 
           </div>
@@ -87,3 +98,4 @@ var ProductPage = React.createClass({
 
 export default ProductPage;
 
+//     <button type="button"className="btn btn-default">{"Qty:" + item[0].quantity}</button>
