@@ -147,7 +147,9 @@ var App = React.createClass({
           cartLookUp={this.cartLookUp} 
           searchInput={this.state.searchInput}
           searchInputFunc={this.searchInput}/>
+          <div style={{height: "auto"}}>
         {children}
+        </div>
         </StickyContainer>
         <ModalElement 
           data={this.state.data} 

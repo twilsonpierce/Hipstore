@@ -1,23 +1,37 @@
 const data = {
-
-  apparel: [{name: 'hipStore Black Beanie', image: ['https://s25.postimg.org/ncfgdsy8v/cdec7586d503e4b90a9bc6c39286b25f.jpg'], price: 9.99, description: 'Essential beanie in the color black, exclusively available at hipStore. Cozy knit construction is complete with a sloughy fit.', quantity: 50, rating: 4.0, category: "apparel"},
+  apparel:         
+  [ 
+  //HipStore-Outwear
+  {name:'Oversized Demin Jacket', image:['https://s-media-cache-ak0.pinimg.com/564x/9b/ad/16/9bad16e137ba8e348bf95aa16844417c.jpg'],price:30.00,description:'n/a',quantity:50,category:"apparel"},
+  {name:'Oversized Bomber Jakcet', image:['https://s-media-cache-ak0.pinimg.com/564x/07/c9/47/07c947a3283d0d15f3f0663419b3f8e2.jpg'], price:40.00,category:"apparel"},
+  {name:'Rust Brown CamelCoat',image:['https://s-media-cache-ak0.pinimg.com/564x/f2/0f/94/f20f9424cf2cff18e300ccb9ad2c4832.jpg'],price:80.00,category:"apparel"},
+  //HipStore-Shirts
+  {name:'Oversized Red Flannel Shirt',image:['https://sc01.alicdn.com/kf/HTB1LQzYJVXXXXaKXXXXq6xXFXXXc.jpg'],price: 20.00,description:' Relaxed oversized button down plaid flannel shirt in burgundy with a patch pocket & roll tab sleeves.We know you are tired of rolling up your sleeves. That is why we already did it for you',quantity: 15,rating:5,category:"apparel"},
+  {name:'Mustard Yellow Flannel Shirt', image:['http://ak2.polyvoreimg.com/cgi/img-thing/size/l/tid/184013975.jpg'],price:25.00,description:' Buy it', quantity:20,category:"apparel"},
+  {name:'Army Green Vintage Flannel Shirt', image:['https://s-media-cache-ak0.pinimg.com/564x/71/4c/9e/714c9eec1f82c58761dc206443d0a0d4.jpg'], price:25.00, description: ' burgundy graphic fresh tee', quantity: 40,rating:5,category:"apparel"},
+  //HipStore-Bottoms
+  {name:'Khaki Jeans', image:['http://ak2.polyvoreimg.com/cgi/img-thing/size/l/tid/42554390.jpg'],price:25.00,category:"apparel"},
+  {name: 'Hipster roll-up Jeans', image: ['http://picture-cdn.wheretoget.it/lr7aex-l-610x610-jeans-ripped+jeans-boyfriend+jeans-dope-indie-hipster-hole+jeans-high+waisted+jeans.jpg'], price: 25.99, description: 'Slashed boyfriend jean from modern essentials. In a slightly slouchy low-rise fit with 5 pockets and a button zip fly. Pairs perfectly with white sneaks + slim-fit tops for a modern tomboy look we love. Exclusively available here at hipStore.', quantity: 16, rating: 9.5, category: "apparel"}, 
+  {name:'All black jeans', image:['http://lp.hm.com/hmprod?set=key%5Bsource%5D,value%5B/model/2016/D00%200400236%20001%2063%205200.jpg%5D&set=key%5Brotate%5D,value%5B%5D&set=key%5Bwidth%5D,value%5B%5D&set=key%5Bheight%5D,value%5B%5D&set=key%5Bx%5D,value%5B%5D&set=key%5By%5D,value%5B%5D&set=key%5Btype%5D,value%5BSTILL_LIFE_FRONT%5D&set=key%5Bhmver%5D,value%5B1%5D&set=key%5Bquality%5D,value%5B80%5D&set=key%5Bsize%5D,value%5B346x405%5D&call=url%5Bfile:/mobile/v2/product%5D'],price:20.00,description:'Washed out black vintage jeans',quantity:10,category:"apparel"},
+  {name:'Jeans', image:['http://ak2.polyvoreimg.com/cgi/img-thing/size/l/tid/8595531.jpg'],price:25.00,description:'Love them!',quantity:30,category:"apparel"},
+  //HipStore Graphic-Tees
+  {name: 'Idk, Google It ', image: ['http://ak1.polyvoreimg.com/cgi/img-thing/size/l/tid/53178089.jpg'], price: 15.00, description: 'HipStore Exclusive Graphic Tee,', category: "apparel"},
+  {name: 'Idk, Google It ', image: ['http://ak1.polyvoreimg.com/cgi/img-thing/size/l/tid/74637822.jpg'], price: 15.00, description: 'HipStore Exclusive Graphic Tee,', category: "apparel"},
+  {name:' IDK', image:['http://ak1.polyvoreimg.com/cgi/img-thing/size/l/tid/114776373.jpg'],price:15.00,category:"apparel"},
+  {name:'IDK2', image:['https://secure.polyvoreimg.com/cgi/img-thing/size/l/tid/170346893.jpg'],price:15.00,category:"apparel"},
+  {name: 'Mermaid T-Shirt', image: ['https://ae01.alicdn.com/kf/HTB1azTRKXXXXXbZXFXXq6xXFXXXq/Basic-t-shirt-women-font-b-hipster-b-font-font-b-clothes-b-font-cute-cartoon.jpg'], price: 15.00, description: 'Mermaid T-Shirt/ Womens',category: "apparel"},
       
-      {name: 'Idk, Google It ', image: ['https://s25.postimg.org/hpj3gbvq7/il_570x_N_790990333_kngx.jpg'], price: 14.99, description: 'HipStore Exclusive Graphic Tee,',quantity: 35, rating: 3.5, category: "apparel"},
-      
-      {name: 'Plaid shirt with sleeves rolled up',image: ['https://s25.postimg.org/qnm6wnhpb/plaid_shirt.jpg'], price: 45.00, 
-      description: "We know you're tired of rolling up your sleeves. That's why we already did it for you.",quantity: 15,rating: 4.8, category: "apparel"},
-      
-      {name: 'Traditional blanket sweater', image: ['https://s25.postimg.org/lnayjh7xb/fcf21121d1a100538f20ef1259698137.jpg'], price: 75.00, description: 'Totally not a poncho but this cozy sweater is better than yours.Teamed up with a nice pair of blue jeans and can be rocked with all-white chuck taylors', quantity: 35, rating: 4.1, category: "apparel"}, 
+  //HipStore-Shoes 
+  {name:'All Black Doc Martins',image:['http://ak2.polyvoreimg.com/cgi/img-thing/size/l/tid/156735588.jpg'],category:"apparel"},
+  {name:'Classic White Chuck Taylors',image:['http://ak2.polyvoreimg.com/cgi/img-thing/size/l/tid/152659031.jpg'],category:"apparel"},
+  {name:'Honey Brown Oxfords',image:['http://ak2.polyvoreimg.com/cgi/img-thing/size/l/tid/120961072.jpg'],category:"apparel"},
+  {name:'Black Platform Lace Up Ankle Boots',image:['http://ak2.polyvoreimg.com/cgi/img-thing/size/l/tid/107586810.jpg'],category:"apparel"},
 
-      {name: 'Converse Shoe: Vintage',image: ['https://s25.postimg.org/e8lmr3m1r/e7f973d7d1f9dcd4c378a7ec3587f05d.jpg'], price: 95, description: "Want to fit in but don't know where to start. Well grab you a pair of these bad boys, and everyone will want to hang out with you. We dipped them in a bag of dirt, to give you the vintage fill with out the smell. You are welcome.", quantity: 50, rating: 0, category: "apparel"},
-
-      {name: 'Hipster roll-up Jeans', image: ['https://s25.postimg.org/f122viue7/jeans.jpg'], price: 25.99, description: 'Slashed boyfriend jean from modern essentials. In a slightly slouchy low-rise fit with 5 pockets and a button zip fly. Pairs perfectly with white sneaks + slim-fit tops for a modern tomboy look we love. Exclusively available here at hipStore.', quantity: 16, rating: 9.5, category: "apparel"}, 
-
-      {name: 'Mermaid T-Shirt', image: ['https://s25.postimg.org/3n1rf3fq7/Basic_t_shirt_women_font_b_hipster_b_font_font_b.jpg'], price: 14.99, description: 'Mermaid T-Shirt/ Womens', quantity: 5, rating: 7.5, category: "apparel"},
-
-      {name: 'Bomber Jacket', image: ['https://s25.postimg.org/8ktmccfa7/1jacket.jpg'], price: 50.99, description: 'Give yourself and old school look with a new school swag.', quantity: 5, rating: 7.5, category: "apparel"},
-
-      {name: 'Shoes', image: ['https://s25.postimg.org/bh2d0hnj3/s_l1000.jpg'], price: 35.75, description: 'Suade Gentlemen woven shoes', quantity: 14, rating: 9.5, category: "apparel"}
+  //HipStore-OutFits
+  {name: 'Outfit#1', image:['https://s-media-cache-ak0.pinimg.com/564x/30/b3/83/30b38387a4df5f3899d931519ed805f3.jpg'],price:140.00,category:"apparel"},
+  {name: 'Outfit#2', image:['http://ak1.polyvoreimg.com/cgi/img-set/cid/92874159/id/EAgsZqkBSMmQXNkqjqe0MA/size/l.jpg'],price:50.00,category:"apparel"},
+  {name: 'Outfit#3',image:['https://s-media-cache-ak0.pinimg.com/564x/ca/32/4d/ca324d474df4560b352ec264ca29af35.jpg'],price:50.00,category:"apparel"},
+  {name: 'Outfit#4', image:['https://s-media-cache-ak0.pinimg.com/564x/be/da/e6/bedae628bdfb9a16d56878f09b4fdaf4.jpg'],price:50.00,category:"apparel"}
       ],
 
 //---------- CATEGORY:FOOD -----------
@@ -88,7 +102,10 @@ const data = {
 
 //---------- CATEGORY:OTHER -----------
 
-   other: [{name: ' Vintage Roll Top BackPack', image: ['https://s25.postimg.org/iltd109jz/435969d9048531c9d8719a94d082179a.jpg'], price: 24.99, description: 'Black Leather Buckled Roll Top BackPack', quantity: 0, rating: 0, category: "other"},
+    //Accessories  + Hats + Scarfs + Bags + Watches 
+
+
+   other: [{name: ' Vintage Roll Top BackPack', image: ['https://s-media-cache-ak0.pinimg.com/236x/43/59/69/435969d9048531c9d8719a94d082179a.jpg'], price: 24.99, description: 'Black Leather Buckled Roll Top BackPack', quantity: 0, rating: 0, category: "other"},
 
           {name: "Beard Grooming kit", image: ['https://s25.postimg.org/rm2jyxv1b/Elite_BEARD_Grooming_Kit_Kit_packed_closeup_2.jpg'], price: 29.99, description: 'hipStore favorite',quantity: 25, rating: 4.5, category: "other"},
           {name: "Rug Runned Over By A Lawnmover", image: ['https://s25.postimg.org/md817z61r/1home.jpg'], price: 799.99, description: 'This one of a kind rug fell off the back of this truck. Then it rolled over underneath a lawnmover. It still looked cool, so we are selling it.',quantity: 1, rating: 2, category: "other"},
@@ -110,12 +127,15 @@ const data = {
           {name: 'Toy Car: Vintage', image: ['https://s25.postimg.org/7sqyd5b33/1car.jpg'], price: 8.75, description: 'Let your inner child shine with this toy car. But your to cool for that, so buy this toy car and leave it on a high shelf for "decoration."', quantity: 255, rating: 3, category: "other"},
 
           {name: 'Key Holder', image: ['https://s25.postimg.org/6ualauxr3/1other.jpg'], price: 15.95, description: 'Key all you little items safe in this tray. Why would you buy this? We do not know. But it looks nice, and you are going to buy it."', quantity: 1655, rating: 3, category: "other"},
+          {name: 'Tokyo Bike', image: ['https://s25.postimg.org/dto53b49r/tumblr_m4f9ld059_R1qcuhvho1_540.jpg'], price: 1200, description: "For those people who love the earth. Don't drive ride to where every your heart desire", quantity: 4, rating: 9, category: "other"},
+          {name: 'Hack and Sack', image: ['http://thumbs2.picclick.com/d/w1600/pict/291806629105_/Dc-Comics-Superman-Shield-Logo-Super-Hero-Hack.jpg'], price: 8.75, description: 'Superman Hack & Sack ball', quantity: 13, rating: 8.5, category: "other"},
 
-          {name: 'Tokyo Bike', image: ['https://s25.postimg.org/dto53b49r/tumblr_m4f9ld059_R1qcuhvho1_540.jpg'], price: 1200, description: "For those people who love the earth. Don't drive ride to where every your heart desire", quantity: 4, rating: 9, category: "other"}
+          {name: 'hipStore Black Beanie', image: ['https://s-media-cache-ak0.pinimg.com/564x/cd/ec/75/cdec7586d503e4b90a9bc6c39286b25f.jpg'], price: 9.99, description: 'Essential beanie in the color black, exclusively available at hipStore. Cozy knit construction is complete with a sloughy fit.', quantity: 50, rating: 4.0, category: "apparel"}
           ],
 
 };
 
 
 export default data;
+//
 
