@@ -6,11 +6,12 @@ var ProductPage = React.createClass({
     //find the image to display base off the params
     let category = this.props.params.category;
     let product = this.props.params.product;
-    let item = this.props.data[category].filter(function(item){
+    let item = this.props.data[category].filter((item) => {
         if(item.name === product){
           return item;
         }
-      })
+    })
+    
     return item
   },
   addItemToCart(event){
@@ -21,11 +22,10 @@ var ProductPage = React.createClass({
 
     // display social media icons
     let socialMedia = ["twitter", "facebook", "tumblr", "pinterest"]
-    let socialIcon = socialMedia.map(function(social,i){
-      return (
-        <a href="#" key={i} title={social}><i className={"fa fa-" + social}></i></a>
-      )
-    })
+    let socialIcon = socialMedia.map((social,i) =>
+      <a href="#" key={i} title={social}><i className={"fa fa-" + social}></i></a>
+    )
+
     let item = this.findItem()
    	return (
       <div className="contentContainer">

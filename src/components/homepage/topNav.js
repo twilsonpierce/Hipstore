@@ -5,7 +5,7 @@ import TopNavBack from './topNavBack';
 
 const TopNav = React.createClass({
   render(){
-    var titleBox = this.props.homepage ? <TopNavBack/> : null
+    let titleBox = this.props.homepage ? <TopNavBack/> : null
     return (
       <div className={"topNav " + (this.props.homepage ? "homeTitle" : null)}>
         {titleBox}
@@ -22,5 +22,3 @@ const TopNav = React.createClass({
 })
 
 export default TopNav
-
-// topOffset={this.props.homepage ? 600 : 0}

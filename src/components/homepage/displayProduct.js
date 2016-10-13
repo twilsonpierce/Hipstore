@@ -3,7 +3,7 @@ import {Link} from 'react-router';
 
 
 const DisplayProduct = React.createClass({
-  render: function(){
+  render(){
     var category = this.props.category === undefined ? "tech" : this.props.category
     return (
       <article className={this.props.isCartModal ? "cartItem" : "modal1 text-center"} >

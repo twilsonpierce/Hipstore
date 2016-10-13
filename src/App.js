@@ -47,10 +47,11 @@ var App = React.createClass({
   componentDidMount(){
 
     //create a list of all data items
-    var listOfItems = []
+    let listOfItems = []
     Object.keys(data).map(function(category){
-      return data[category].map(function(item){
+      return data[category].map((item)=>{
           listOfItems.push(item)
+          return null
       })
     })
 
@@ -66,6 +67,8 @@ var App = React.createClass({
     this.setState({modalIsOpen: false, isCart: false, searchInput: false});
   },
   scrollRight(){
+
+    // create a new start index when event is trigger
     let startIndex = this.state.bottomFeatureI === this.state.data.tech.length-4 ? 0 : this.state.bottomFeatureI + 1
       this.setState({bottomFeatureI: startIndex})
   },
@@ -76,7 +79,7 @@ var App = React.createClass({
 
   handleItemSearch(item){
 
-    var searchItemsObjs = this.state.filteredList.filter(function(filteredListItem){
+    let searchItemsObjs = this.state.filteredList.filter((filteredListItem)=>{
       if(filteredListItem.name.toLowerCase().indexOf(item) !== -1){
         return filteredListItem
       }
@@ -112,22 +115,22 @@ var App = React.createClass({
     },2500)
   },
   signup(name){
+
+    //show username in navbar
     this.setState({username: name})
   },
   searchInput(){
-    this.setState({searchInput: true})
-    //console.log(ReactDOM.findDOMNode(this.key["search"]))
-    
+    this.setState({searchInput: true})    
   },
   render() {
     //loop over all the children routes and pass them propTypes
     let that = this
-    var children = React.Children.map(this.props.children, function(child) {
+    let children = React.Children.map(this.props.children, function(child) {
         return React.cloneElement(child, Object.assign({}, that.state));
     });
 
     //display the top nav only on the homepage
-    var isHomepage = Object.keys(this.props.params).length === 0 ? true : false
+    let isHomepage = Object.keys(this.props.params).length === 0 ? true : false
 
     return (
       <div>
