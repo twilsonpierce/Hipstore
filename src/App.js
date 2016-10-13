@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {Router, Route, browserHistory, IndexRoute} from 'react-router';
 import { StickyContainer} from 'react-sticky';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 //css
 import 'bootstrap/dist/css/bootstrap.css';
@@ -17,6 +18,7 @@ import CategoryPage from './CategoryPage'
 import ProductPage from './ProductPage'
 import Signup from './Signup'
 import Cart from './Cart'
+import CartModal from './components/cart/CartModal'
 import data from './data'
 import ModalElement from './components/homepage/modal'
 
@@ -86,11 +88,28 @@ var App = React.createClass({
     this.setState({filteredList: this.state.listOfItems})
   },
   addToCart(item, event){
-    this.setState({cart: this.state.cart.concat(item)})
-    this.openModal(event)
+      // if (this.state.cart.length === 0) {
+      //   let item = item[0];
+      //   this.setState({cart: [{item, quantity:1}] })
+      // } else {
+
+      // let addToQuantity = this.state.cart.map(function (itemInCart){
+      //   console.log(itemInCart)
+      //     if(itemInCart.name === item.name){
+      //       console.log("same", itemInCart.quantity)
+      //       return {itemInCart, quantity: itemInCart.quantity + 1}
+      //     } else {
+      //       console.log("different")
+      //       return {itemInCart, quantity: 1}
+      //     }
+      //   })
+      //   this.setState({cart: addToQuantity})
+      // }
+    
+    this.setState({cart: this.state.cart.concat(item[0]), isCart: true})
     setTimeout(() =>{
-      this.closeModal();
-    },3000)
+      this.setState({isCart: false})
+    },2500)
   },
   signup(name){
     this.setState({username: name})
@@ -106,9 +125,10 @@ var App = React.createClass({
     var children = React.Children.map(this.props.children, function(child) {
         return React.cloneElement(child, Object.assign({}, that.state));
     });
-    console.log(Object.keys(this.props.params).length)
+
+    //display the top nav only on the homepage
     var isHomepage = Object.keys(this.props.params).length === 0 ? true : false
-    console.log(isHomepage)
+
     return (
       <div>
         <StickyContainer>
@@ -125,14 +145,18 @@ var App = React.createClass({
           searchInput={this.state.searchInput}
           searchInputFunc={this.searchInput}/>
         {children}
+        </StickyContainer>
         <ModalElement 
           data={this.state.data} 
           filteredList={this.state.filteredList}
           modalState={this.state.modalIsOpen}
           closeModal={this.closeModal}
-          isCart={this.state.isCart}
-          cart={this.state.cart}/>
-        </StickyContainer>
+        />
+        { this.state.isCart ? 
+          <CartModal className="test" cart={this.state.cart}/>
+          : null
+        }
+        
         <Footer />
       </div>
     )

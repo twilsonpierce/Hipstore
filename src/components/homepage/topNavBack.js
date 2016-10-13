@@ -6,17 +6,24 @@ const TopNavBack = React.createClass({
   
   blinkingIcon () {
     var that = this
+
     setTimeout(function() {
       setInterval(() => {
         ReactDOM.findDOMNode(that.refs["navChev"]).style.opacity = 0;
       },1500)
     },750)
+
     setInterval(() => {
       ReactDOM.findDOMNode(this.refs["navChev"]).style.opacity = .7;
     },1500)
+  
+  },
+  componentDidUpdate() {
+    if (ReactDOM.findDOMNode(this.refs["navChev"])){
+      //this.blinkingIcon()
+    }
   },
   render(){
-    this.blinkingIcon()
     return (
         <div className="titleCont">
           <article className="titleBox">

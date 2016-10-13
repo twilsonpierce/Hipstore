@@ -53,7 +53,7 @@ var ProductPage = React.createClass({
           </div>
         
             <div className="features detailRow">
-            <button type="button"className=" btn btn-default">{"Qty:" + item[0].quantity}</button>
+            <button type="button"className="btn btn-default">{"Qty:" + item[0].quantity}</button>
             <button onClick={this.addItemToCart} type="button"className="btn btn-default" id="targbut">Add To Bag</button>
 
           </div>

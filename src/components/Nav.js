@@ -43,16 +43,16 @@ const Nav = React.createClass({
         </li>
       )
     })
+
+
     return (
-        <Sticky stickyClassName="customSticky"> 
-          <nav className="navCont">
-            <ul className="linkContainer">
-              <Link to="/home/signup"><li className="link nameLink">{this.props.username}</li></Link>
-              {links}
-              <li className="link">
-              <Link to="/checkout/cart"><button className="suitcase"><i className="fa fa-suitcase" aria-hidden="true"></i></button></Link>
-              </li>
-            </ul>
+        <Sticky className="navCont" stickyClassName="navSticky" > 
+          <ul className="linkContainer">
+            <Link to="/home/signup"><li className="link nameLink">{this.props.username}</li></Link>
+            {links}
+            <li className="link">
+            <Link to="/checkout/cart"><button className="suitcase"><i className="fa fa-suitcase" aria-hidden="true"></i></button></Link>
+            </li>
             <div className="searchBar">
               {
                 this.props.searchInput ?
@@ -63,14 +63,15 @@ const Nav = React.createClass({
                       type="text" 
                       className="searchInput"
                       ref="searchInput" 
-                      placeholder="Search"
+                      placeholder="search"
                       onChange={this.handleChange}
                       onKeyDown={this.handleReset} />
                   </ReactCSSTransitionGroup> :
                   <button className="searchButton" onClick={this.focusOnInput}>search <i className="fa fa-search" aria-hidden="true"></i></button>
               }
             </div>
-          </nav>
+          </ul>
+  
         </Sticky>
     )
   }
