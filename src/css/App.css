@@ -4,6 +4,7 @@
 @import url("modal.css");
 @import url("category.css");
 @import url("product.css");
+@import url("cart.css");
 @import url("signup.css");
 @import url("404Page.css");
 @import url("footer.css");
@@ -33,6 +34,14 @@ body, html {
 
 body{
   overflow-x: hidden;
+}
+
+.mainBody{
+  position: relative;
+}
+
+.btn {
+  margin-bottom: 0px;
 }
 
 

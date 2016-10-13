@@ -24,10 +24,8 @@ var ModalElement = React.createClass({
 
   render() {
     let itemDisplay = []
-    let cartDisplay = null
 
-
-    if(this.props.modalState && !this.props.isCart){  
+    if(this.props.modalState){  
       for (let i = 0; i < 6; i++){
         let item = this.props.filteredList[i]
         if(item === undefined){
@@ -35,26 +33,22 @@ var ModalElement = React.createClass({
         }
         itemDisplay.push(<DisplayProduct category={item.category} src={item.image[0]} itemName={item.name} key={i} closeModal={this.props.closeModal}/>)
       }
-    } else if(this.props.modalState && this.props.isCart){
-      let that = this;
-      cartDisplay = this.props.cart.map(function(item,i){
-        console.log(item)
-        return <DisplayProduct category={item.category} src={item.item.image[0]} itemName={item.item.name} price={item.item.price}key={i} closeModal={that.props.closeModal}/>
-      })
     }
+
     return (
-      <div className="content">
+      <div className="modalContent">
         <Modal
           isOpen={this.props.modalState}
           onAfterOpen={this.afterOpenModal}
-          className={this.props.isCart ? "cart" : "content"}
+          className="modalContent"
           >
 
           <button className="fa fa-times pull-right" onClick={this.props.closeModal}></button>
-          <h2 ref="subtitle">{this.props.isCart ? "Items In Cart:" : "Search Results:"}</h2>
+          {this.props.isCart ? null: <h2 ref="subtitle">Search Results:"</h2>}
           <div className="modalDirection">
 
-          {cartDisplay ? cartDisplay : itemDisplay}
+          {itemDisplay}
+
           </div>
 
           <div>

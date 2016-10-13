@@ -6,15 +6,15 @@ const DisplayProduct = React.createClass({
   render: function(){
     var category = this.props.category === undefined ? "tech" : this.props.category
     return (
-      <article className={"modal1 text-center"}>
+      <article className={this.props.isCartModal ? "cartItem" : "modal1 text-center"} >
         <Link to={"/category/" + category + "/" + this.props.itemName}>
           <img 
             onClick={this.props.closeModal} 
             alt={this.props.itemName} 
-            className="modalImage" 
+            className={this.props.isCartModal ? "cartModalImage" : "modalImage" }
             src={this.props.src} />
         </Link>
-        <p>{this.props.itemName}{this.props.price ? ': $' + this.props.price : ""}</p>
+        <p><span>{this.props.itemName}</span><span>{this.props.price ? ': $' + this.props.price : ""}</span></p>
       </article>
     )
   }
