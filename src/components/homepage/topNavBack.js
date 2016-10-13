@@ -2,12 +2,10 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 const TopNavBack = React.createClass({
-  
-  
-  blinkingIcon () {
+  blinkingIcon() {
     var that = this
 
-    setTimeout(function() {
+    setTimeout(() => {
       setInterval(() => {
         ReactDOM.findDOMNode(that.refs["navChev"]).style.opacity = 0;
       },1500)

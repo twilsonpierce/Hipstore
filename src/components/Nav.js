@@ -35,16 +35,12 @@ const Nav = React.createClass({
     },100)
   },
   render: function() {
-    let links = Object.keys(this.props.data).map(function(category, i){
-      return (
-
-        <li key={i} className="link">
-          <Link to={"/category/" + category}>{category.toLowerCase()}</Link>
-        </li>
-      )
-    })
-
-
+    let links = Object.keys(this.props.data).map((category, i) => (
+      <li key={i} className="link">
+        <Link to={"/category/" + category}>{category.toLowerCase()}</Link>
+      </li>
+    ))
+    
     return (
         <Sticky className="navCont" stickyClassName="navSticky" > 
           <ul className="linkContainer">

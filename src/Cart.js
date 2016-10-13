@@ -1,7 +1,7 @@
 import React from 'react'
 
 
-const Cart =React.createClass({
+const Cart = React.createClass({
    render() {
       return (
          <div>
