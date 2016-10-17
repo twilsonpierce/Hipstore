@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import {Link} from 'react-router'
+import {Sticky} from 'react-sticky';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 const Nav = React.createClass({
@@ -18,7 +19,7 @@ const Nav = React.createClass({
       this.props.onChange(event.target.value)
       setTimeout(() =>{
         ReactDOM.findDOMNode(this.refs["searchInput"]).focus()
-      },100)
+      },500)
     }
 
   },
@@ -27,43 +28,50 @@ const Nav = React.createClass({
       this.props.onReset()
     }
   },
+  focusOnInput(){
+    this.props.searchInputFunc()
+    setTimeout(() =>{
+      ReactDOM.findDOMNode(this.refs["searchInput"]).focus()
+    },100)
+  },
   render: function() {
-    var links = Object.keys(this.props.data).map(function(category, i){
-      return (
-
-        <li key={i} className="nav-item">
-          <Link to={"/category/" + category}>{category.toUpperCase()}</Link>
-        </li>
-      )
-    })
+    let links = Object.keys(this.props.data).map((category, i) => (
+      <li key={i} className="link">
+        <Link to={"/category/" + category}>{category.toLowerCase()}</Link>
+      </li>
+    ))
+    
     return (
-      <nav className="navbar navbar-fixed-top">
-        <div className="container-fluid navbarCont">
-          <Link to="/"><div className="mainLogo col-xs-3">
-          </div></Link>
-          <form className="navbar-form pull-right col-xs-2">
-          <div className="form-group">
-            <input 
-              key="search"
-              type="text" 
-              className="form-control searchInput"
-              ref="searchInput" 
-              placeholder="Search"
-              onChange={this.handleChange}
-              onKeyDown={this.handleReset} />
-          </div>
-          </form>
-        <ul className="nav navbar-nav col-xs-4 pull-right text-center topNav">
-          {(this.props.username) ? <li className="nav-item"><a>{"Hi, " + this.props.username}</a></li> : null}
-          {links}
-          <li className="nav-item pull-right">
-          <button onClick={this.props.openModal}><i className="fa fa-suitcase" aria-hidden="true"></i></button>
-          </li>
-        </ul>
-        </div>
-      </nav>
+        <Sticky className="navCont" stickyClassName="navSticky" > 
+          <ul className="linkContainer">
+            <Link to="/home/signup"><li className="link nameLink">{this.props.username}</li></Link>
+            {links}
+            <li className="link">
+            <Link to="/checkout/cart"><button className="suitcase"><i className="fa fa-suitcase" aria-hidden="true"></i></button></Link>
+            </li>
+            <div className="searchBar">
+              {
+                this.props.searchInput ?
+                  <ReactCSSTransitionGroup transitionName="search" transitionAppear={true} transitionAppearTimeout={500}
+                    transitionEnter={false} transitionLeave={false}>
+                    <input 
+                      key="search"
+                      type="text" 
+                      className="searchInput"
+                      ref="searchInput" 
+                      placeholder="search"
+                      onChange={this.handleChange}
+                      onKeyDown={this.handleReset} />
+                  </ReactCSSTransitionGroup> :
+                  <button className="searchButton" onClick={this.focusOnInput}>search <i className="fa fa-search" aria-hidden="true"></i></button>
+              }
+            </div>
+          </ul>
+  
+        </Sticky>
     )
   }
 })
 
 export default Nav
+

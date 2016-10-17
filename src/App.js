@@ -1,20 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {Router, Route, browserHistory, IndexRoute} from 'react-router';
+import { StickyContainer} from 'react-sticky';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+
+//css
 import 'bootstrap/dist/css/bootstrap.css';
-import './App.css';
-import './category.css';
-import './signup.css';
-import './product.css';
+import './css/App.css';
 
 //components 
 import Nav from './components/Nav'
 import Footer from './components/Footer'
+import TopNav from './components/homepage/topNav.js'
 import FoundError from './FoundError'
 import HomePage from './HomePage'
 import CategoryPage from './CategoryPage'
 import ProductPage from './ProductPage'
 import Signup from './Signup'
+import Cart from './Cart'
+import CartModal from './components/cart/CartModal'
 import data from './data'
 import ModalElement from './components/homepage/modal'
 
@@ -25,7 +29,8 @@ var App = React.createClass({
       data: data, 
       listOfItems: '', 
       filteredList: '',
-      filteredData: null, 
+      filteredData: null,
+      searchInput: false, 
       modalIsOpen: false, 
       closeModal: this.closeModal, 
       scrollRight: this.scrollRight, 
@@ -34,7 +39,7 @@ var App = React.createClass({
       bottomFeatureI: 0,
       cart: [], 
       isCart: false,
-      username: "", 
+      username: "signup", 
       addToCart: this.addToCart,
     }
   },
@@ -42,10 +47,11 @@ var App = React.createClass({
   componentDidMount(){
 
     //create a list of all data items
-    var listOfItems = []
+    let listOfItems = []
     Object.keys(data).map(function(category){
-      return data[category].map(function(item){
+      return data[category].map((item)=>{
           listOfItems.push(item)
+          return null
       })
     })
 
@@ -54,35 +60,26 @@ var App = React.createClass({
   openModal(event) {
 
     //check to see if the function call is from the search bar or cart click
-    if(event !== undefined){
-      this.setState({modalIsOpen: true, isCart:true});
-    } else {
-      this.setState({modalIsOpen: true, isCart:false});
-    }
+    let isCart = event !== undefined ? true : false
+    this.setState({modalIsOpen: true, isCart: isCart});
   },
   closeModal() {
-    this.setState({modalIsOpen: false, isCart: false});
-    document.querySelector('.searchInput').value = ""
-
+    this.setState({modalIsOpen: false, isCart: false, searchInput: false});
   },
   scrollRight(){
-    if(this.state.bottomFeatureI === this.state.data.tech.length-4){
-      this.setState({bottomFeatureI: 0})
-    } else {
-      this.setState({bottomFeatureI: this.state.bottomFeatureI + 1})
-    }
+
+    // create a new start index when event is trigger
+    let startIndex = this.state.bottomFeatureI === this.state.data.tech.length-4 ? 0 : this.state.bottomFeatureI + 1
+      this.setState({bottomFeatureI: startIndex})
   },
   scrollLeft(){
-    if(this.state.bottomFeatureI === 0){
-      this.setState({bottomFeatureI: this.state.data.tech.length-4})
-    } else {
-      this.setState({bottomFeatureI: this.state.bottomFeatureI - 1})
-    }
+    let startIndex = this.state.bottomFeatureI === 0 ? this.state.data.tech.length-4 : this.state.bottomFeatureI - 1
+      this.setState({bottomFeatureI: startIndex})
   },
 
   handleItemSearch(item){
 
-    var searchItemsObjs = this.state.filteredList.filter(function(filteredListItem){
+    let searchItemsObjs = this.state.filteredList.filter((filteredListItem)=>{
       if(filteredListItem.name.toLowerCase().indexOf(item) !== -1){
         return filteredListItem
       }
@@ -93,34 +90,78 @@ var App = React.createClass({
   handleSearchReset() {
     this.setState({filteredList: this.state.listOfItems})
   },
-  addToCart(item){
-    console.log("cart enter", item)
-    this.setState({cart: this.state.cart.concat(item)})
+  addToCart(item, event){
+      // if (this.state.cart.length === 0) {
+      //   let item = item[0];
+      //   this.setState({cart: [{item, quantity:1}] })
+      // } else {
+
+      // let addToQuantity = this.state.cart.map(function (itemInCart){
+      //   console.log(itemInCart)
+      //     if(itemInCart.name === item.name){
+      //       console.log("same", itemInCart.quantity)
+      //       return {itemInCart, quantity: itemInCart.quantity + 1}
+      //     } else {
+      //       console.log("different")
+      //       return {itemInCart, quantity: 1}
+      //     }
+      //   })
+      //   this.setState({cart: addToQuantity})
+      // }
+    
+    this.setState({cart: this.state.cart.concat(item[0]), isCart: true})
+    setTimeout(() =>{
+      this.setState({isCart: false})
+    },2500)
   },
   signup(name){
+
+    //show username in navbar
     this.setState({username: name})
   },
-  cartLookUp(){
-
+  searchInput(){
+    this.setState({searchInput: true})    
   },
   render() {
     //loop over all the children routes and pass them propTypes
-    var that = this
-    var children = React.Children.map(this.props.children, function(child) {
+    let that = this
+    let children = React.Children.map(this.props.children, function(child) {
         return React.cloneElement(child, Object.assign({}, that.state));
     });
-    console.log(this.state.isCart)
+
+    //display the top nav only on the homepage
+    let isHomepage = Object.keys(this.props.params).length === 0 ? true : false
+
     return (
       <div>
-        <Nav data={this.state.data} onChange={this.handleItemSearch} onReset={this.handleSearchReset} openModal={this.openModal} closeModal={this.closeModal} cart={this.state.cart} username={this.state.username} cartLookUp={this.cartLookUp}/>
+        <StickyContainer>
+        <TopNav homepage={isHomepage}/>
+        <Nav 
+          data={this.state.data} 
+          onChange={this.handleItemSearch} 
+          onReset={this.handleSearchReset} 
+          openModal={this.openModal} 
+          closeModal={this.closeModal} 
+          cart={this.state.cart} 
+          username={this.state.username} 
+          cartLookUp={this.cartLookUp} 
+          searchInput={this.state.searchInput}
+          searchInputFunc={this.searchInput}/>
+          <div style={{height: "auto"}}>
         {children}
+        </div>
+        </StickyContainer>
         <ModalElement 
           data={this.state.data} 
           filteredList={this.state.filteredList}
           modalState={this.state.modalIsOpen}
           closeModal={this.closeModal}
-          isCart={this.state.isCart}
-          cart={this.state.cart}/>
+        />
+        { this.state.isCart ? 
+          <CartModal className="test" cart={this.state.cart}/>
+          : null
+        }
+        
         <Footer />
       </div>
     )
@@ -134,7 +175,8 @@ ReactDOM.render(
       <IndexRoute component={HomePage} />
       <Route path="/category/:category" component={CategoryPage} />
       <Route path="/category/:category/:product" component={ProductPage} />
-      <Route path="/signup" component={Signup} />
+      <Route path="/home/:signup" component={Signup} />
+      <Route path="/checkout/:cart" component={Cart} />
     </Route> 
     <Route path="*" component={FoundError} />
   </Router>,

@@ -12,14 +12,14 @@ var HomeBody = React.createClass({
           <h1>Featured Item</h1>
         </div>
         <div className="col-xs-3 thirdCont rounded">
-          <Link to="/category/other/Beard%20Grooming%20kit'">
+          <Link to="/category/other/Beard%20Grooming%20kit">
             <div className="newItems rounded">
               <h1>Newest Item</h1>
             </div>
           </Link>
           <div className="rounded callToAction">
             <p>Sign up. We'll send you some guac.</p>
-            <Link to="/signup"><button type="button" className="btn btn-default btn">Join Now!</button></Link>
+            <Link to="/home/signup"><button type="button" className="btn btn-default btn">Join Now!</button></Link>
           </div>
         </div>
       </div>

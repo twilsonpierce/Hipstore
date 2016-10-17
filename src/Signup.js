@@ -14,7 +14,7 @@ const Signup = React.createClass({
   render(){
     var that = this;
     let types = ["name", "email", "password"]
-    let inputs = types.map(function(type, i){
+    let inputs = types.map((type, i) => {
       let isPassword = (type === "password") ? "password" : "text"
       return (
         <div className="inputField" key={i}>
