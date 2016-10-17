@@ -15,12 +15,14 @@
 
 .productDisplay{
   background-color: white;  
-  width: 55%;
+  width: 85%;
   margin-top: -130px;
   margin-bottom: 30px;
-  margin-left: 25%;
-  justify-content: space-around;
-  border: 1px solid black;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
   font-size: 20px;
   line-height: 0;
   column-count: 3;
@@ -31,34 +33,11 @@
   z-index: 2;
 }
 
-.greenDash {
-  width: 100%;
-  height: 200px;
-  background-color: #78866B;
-  margin-bottom: 550px;
-  margin-top: 150px;
-  border-bottom: 10px;
-  border-bottom-color: brown;
-}
-
-.browndash {
-  width: 100%;
-  height: 30px;
-  background-color: #C19A6B;
-  margin-top: -540px;
-  margin-bottom: 400px;
-}
-
-.productDisplay:hover {
-  width: 70%;
-  transition: .5s;
-}
 
 .categoryProduct{
-  width: 100%;
+  width: 28%;
   height: auto;
-  padding: 1%;
-  margin-left: 20px;
+  margin: 1%;
 }
 
 .categoryProduct img {
