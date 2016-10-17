@@ -8,18 +8,13 @@ const CategoryPage = React.createClass({
     )
 
     return (
-      <div className={"categoryPage " + this.props.params.category}>
+      <div className="categoryPage">
         <h3>{this.props.params.category.toUpperCase()}</h3>
-
-        <div className="greenDash">
 
         <section className="productDisplay">
            {products}
         </section>
-        </div>
 
-        <div className="browndash">
-        </div>
       </div>
       )
   }

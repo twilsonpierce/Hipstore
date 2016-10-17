@@ -38,8 +38,8 @@ const Footer = React.createClass({
           <div className="col-xs-4 text-center">
             <a className="presented" href="http://www.c4q.nyc/" target="_blank">Sponsored by C4Q</a>
           </div>
-          <div className="col-xs-1 pull-right">
-          <small>HipStore &copy; 2016 </small>
+          <div className="col-xs-2 pull-right">
+          <p>HipStore &copy; 2016 </p>
           </div>
         </div>
         

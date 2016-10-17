@@ -9,7 +9,7 @@ const TopNav = React.createClass({
     return (
       <div className={"topNav " + (this.props.homepage ? "homeTitle" : null)}>
         {titleBox}
-        <div className="logo">
+        <div className={this.props.homepage ? "logo" : "otherLogo"}>
           <Sticky className="mainLogo" stickyClassName="stickyLogo" >
             <Link to="/">
               <img alt="hipstore_logo" src={require("../../images/hipstore.png")} />

@@ -76,9 +76,18 @@
   width: 16vw;
 }
 
+.otherLogo{
+  position: absolute;
+  top: 20px;
+  left: 50px;
+  width: 12vw;
+  z-index: 100000000;
+}
+
 .stickyLogo {
   z-index: 300000000;
-}*/
+  margin-top: 10px;
+}
 
 .mainLogo{
   z-index: 300000000;
@@ -86,9 +95,17 @@
   height: auto;
 }
 
+.mainLogo a:hover{
+  background: transparent;
+}
+
 .mainLogo img {
   width:100%;
   height: auto;
+}
+
+.otherLogo {
+
 }
 
 .linkContainer{
@@ -110,10 +127,15 @@
   margin: 0;
 }
 
-/*.nameLink{
-  width: 250px;
-  line-height: 1em;
-}*/
+.link a:hover {
+  text-decoration: none;
+  background: transparent;
+}
+
+.nameLink:hover {
+  text-decoration: none;
+  background: transparent;
+}
 
 .suitcase{
   border: none;
