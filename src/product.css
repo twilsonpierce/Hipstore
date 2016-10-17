@@ -6,7 +6,7 @@
 }
 
 .contentContainer {
-  margin-top: 100px;
+  margin-top: 150px;
   width:1000px;
   height:700px;
   margin-left: 30px;
@@ -53,6 +53,37 @@
   font-size: 12px;
 }
 
+/* div.icon.detailRow{
+  display: flex;
+  justify-content:flex-start;
+  margin-left:-200px;
+  
+}*/
+
+/*.urls{
+  margin-top:100px;
+}
+
+*/
+div.features.detailRow{
+  display:flex;
+  justify-content: center;
+  margin-top:120px;
+}
+
+div.urls{
+  display: flex;
+  flex-direction: column;
+  float: left;
+  align-items:center;
+  margin-left: 500px;
+  margin-top:-250px;
+}
+
+button#targbut.btn.btn-default{
+  float: left;
+  margin-left: 90px;
+}
 
 
 .stock{
@@ -67,3 +98,16 @@ border-radius: 22.5px;
   margin-bottom: 250px;
 }
 
+.rating{  
+margin-left:10px;
+margin-top:100px;
+}
+
+button#minus.btn.btn-default{
+  opacity: 0.7;
+
+}
+
+button#add.btn.btn-default{
+  opacity: 0.7;
+}
