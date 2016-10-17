@@ -69,9 +69,8 @@
 }
 
 .displayCartImage {
-  height: 150px;
-  width: 100px;
-  border: 1px solid black;
+  height: auto;
+  width: 200px;
 }
 
 .displayCartImage img {

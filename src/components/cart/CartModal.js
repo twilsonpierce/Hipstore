@@ -12,12 +12,11 @@ const CartModal = React.createClass({
         cartDisplay.unshift(<DisplayProduct isCartModal={true} category={item[i].category} src={item[i].image[0]} itemName={item[i].name} price={item[i].price} key={i} closeModal={that.props.closeModal}/>)
       }
     }
-    console.log(this.props.cart)
+
     let cartPrice = this.props.cart.reduce((total, item) => {
       console.log(total)
       return total + item.price
     }, 0)
-    console.log(cartPrice)
 
     return (
       <div className="cartModalCont">
