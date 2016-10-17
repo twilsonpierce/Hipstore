@@ -1,5 +1,6 @@
 import React from 'react'
 import DisplayProduct from '../homepage/displayProduct'
+import {Link} from 'react-router'
 
 const CartModal = React.createClass({
   render() {
@@ -11,13 +12,19 @@ const CartModal = React.createClass({
         cartDisplay.unshift(<DisplayProduct isCartModal={true} category={item[i].category} src={item[i].image[0]} itemName={item[i].name} price={item[i].price} key={i} closeModal={that.props.closeModal}/>)
       }
     }
+    console.log(this.props.cart)
+    let cartPrice = this.props.cart.reduce((total, item) => {
+      console.log(total)
+      return total + item.price
+    }, 0)
+    console.log(cartPrice)
 
     return (
       <div className="cartModalCont">
         {cartDisplay}
         <div className="cartInfo">
-          <p>Total: $00.00</p>
-          <button className="cartButton btn btn-default">Checkout</button>
+          <p>Total: ${cartPrice}</p>
+          <Link to='/checkout/cart'><button className="cartButton btn btn-default">Checkout</button></Link>
         </div>
       </div>
     )

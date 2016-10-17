@@ -44,3 +44,37 @@
 .cartButton{
   margin-left: 5%;
 }
+
+
+/*CART PAGE*/
+
+.cartPage{
+  margin: 5%;
+}
+
+.cartPage h1{
+  
+}
+
+.displayCartItem {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 10%;
+  border-bottom: 1px solid black;
+  padding: 1%;
+  margin: 0 5%;
+  font-size: 2em;
+}
+
+.displayCartImage {
+  height: 150px;
+  width: 100px;
+  border: 1px solid black;
+}
+
+.displayCartImage img {
+  width: 100%;
+  height: auto;
+}

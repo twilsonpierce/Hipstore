@@ -2,7 +2,7 @@ import React from 'react';
 import StarRatingComponent from 'react-star-rating-component';
 
 
-const ProductPage = React.createClass({	
+const ProductPage = React.createClass({ 
   //Getting the ratings from users 
   getInitialState:function(){
     return({rating: 0})
@@ -30,9 +30,6 @@ const ProductPage = React.createClass({
       this.setState({rating: nextValue});
   },
   render: function(){
-    console.log(this.state, 'this is the state');
-    console.log(this.handleChange, 'this is the onClick function')
-    console.log(this.state.rating)
 
     // display social media icons
     let socialMedia = ["twitter", "facebook", "tumblr", "pinterest"]
@@ -46,7 +43,7 @@ const ProductPage = React.createClass({
     }
 
     let item = this.findItem()
-   	return (
+    return (
       <div className="contentContainer">
 
         <img className=" image col-xs-6"src={item[0].image[0]} alt={item[0].name} ></img>
@@ -54,7 +51,7 @@ const ProductPage = React.createClass({
 
         <div className="detailContainer col-xs-6">
 
-        	<div className="detailRow itemHeading">
+          <div className="detailRow itemHeading">
             <div className="itemTitle">{item[0].name}</div>
             <div className="itemPrice">{"$" + item[0].price}</div>
           </div>
@@ -93,9 +90,8 @@ const ProductPage = React.createClass({
 
       </div>
       )
-	}
+  }
 });
 
 export default ProductPage;
 
-//     <button type="button"className="btn btn-default">{"Qty:" + item[0].quantity}</button>
