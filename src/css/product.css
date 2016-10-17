@@ -68,21 +68,21 @@
 div.features.detailRow{
   display:flex;
   justify-content: center;
-  margin-top:120px;
+  margin-top:50px;
 }
 
-div.urls{
+div.icon.detailRow{
   display: flex;
   flex-direction: column;
   float: left;
   align-items:center;
   margin-left: 500px;
-  margin-top:-250px;
+  margin-top:-370px;
 }
 
 button#targbut.btn.btn-default{
   float: left;
-  margin-left: 90px;
+  margin-left: 100px;
 }
 
 
@@ -98,9 +98,9 @@ border-radius: 22.5px;
   margin-bottom: 250px;
 }
 
-.rating{  
+div.rating{  
 margin-left:10px;
-margin-top:100px;
+margin-top:90px;
 }
 
 button#minus.btn.btn-default{

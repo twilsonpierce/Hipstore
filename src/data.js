@@ -2,37 +2,32 @@ const data = {
   apparel:         
   [ 
   //HipStore-Outwear
-  {name:'Oversized Demin Jacket', image:['https://s-media-cache-ak0.pinimg.com/564x/9b/ad/16/9bad16e137ba8e348bf95aa16844417c.jpg'],price:30.00,description:'n/a',quantity:50,category:"apparel"},
-  {name:'Oversized Bomber Jakcet', image:['https://s-media-cache-ak0.pinimg.com/564x/07/c9/47/07c947a3283d0d15f3f0663419b3f8e2.jpg'], price:40.00,category:"apparel"},
-  {name:'Rust Brown CamelCoat',image:['https://s-media-cache-ak0.pinimg.com/564x/f2/0f/94/f20f9424cf2cff18e300ccb9ad2c4832.jpg'],price:80.00,category:"apparel"},
-  //HipStore-Shirts
-  {name:'Oversized Red Flannel Shirt',image:['https://sc01.alicdn.com/kf/HTB1LQzYJVXXXXaKXXXXq6xXFXXXc.jpg'],price: 20.00,description:' Relaxed oversized button down plaid flannel shirt in burgundy with a patch pocket & roll tab sleeves.We know you are tired of rolling up your sleeves. That is why we already did it for you',quantity: 15,rating:5,category:"apparel"},
-  {name:'Mustard Yellow Flannel Shirt', image:['http://ak2.polyvoreimg.com/cgi/img-thing/size/l/tid/184013975.jpg'],price:25.00,description:' Buy it', quantity:20,category:"apparel"},
-  {name:'Army Green Vintage Flannel Shirt', image:['https://s-media-cache-ak0.pinimg.com/564x/71/4c/9e/714c9eec1f82c58761dc206443d0a0d4.jpg'], price:25.00, description: ' burgundy graphic fresh tee', quantity: 40,rating:5,category:"apparel"},
-  //HipStore-Bottoms
-  {name:'Khaki Jeans', image:['http://ak2.polyvoreimg.com/cgi/img-thing/size/l/tid/42554390.jpg'],price:25.00,category:"apparel"},
-  {name: 'Hipster roll-up Jeans', image: ['http://picture-cdn.wheretoget.it/lr7aex-l-610x610-jeans-ripped+jeans-boyfriend+jeans-dope-indie-hipster-hole+jeans-high+waisted+jeans.jpg'], price: 25.99, description: 'Slashed boyfriend jean from modern essentials. In a slightly slouchy low-rise fit with 5 pockets and a button zip fly. Pairs perfectly with white sneaks + slim-fit tops for a modern tomboy look we love. Exclusively available here at hipStore.', quantity: 16, rating: 9.5, category: "apparel"}, 
-  {name:'All black jeans', image:['http://lp.hm.com/hmprod?set=key%5Bsource%5D,value%5B/model/2016/D00%200400236%20001%2063%205200.jpg%5D&set=key%5Brotate%5D,value%5B%5D&set=key%5Bwidth%5D,value%5B%5D&set=key%5Bheight%5D,value%5B%5D&set=key%5Bx%5D,value%5B%5D&set=key%5By%5D,value%5B%5D&set=key%5Btype%5D,value%5BSTILL_LIFE_FRONT%5D&set=key%5Bhmver%5D,value%5B1%5D&set=key%5Bquality%5D,value%5B80%5D&set=key%5Bsize%5D,value%5B346x405%5D&call=url%5Bfile:/mobile/v2/product%5D'],price:20.00,description:'Washed out black vintage jeans',quantity:10,category:"apparel"},
-  {name:'Jeans', image:['http://ak2.polyvoreimg.com/cgi/img-thing/size/l/tid/8595531.jpg'],price:25.00,description:'Love them!',quantity:30,category:"apparel"},
-  //HipStore Graphic-Tees
-  {name: 'Idk, Google It ', image: ['http://ak1.polyvoreimg.com/cgi/img-thing/size/l/tid/53178089.jpg'], price: 15.00, description: 'HipStore Exclusive Graphic Tee,', category: "apparel"},
-  {name: 'Idk, Google It ', image: ['http://ak1.polyvoreimg.com/cgi/img-thing/size/l/tid/74637822.jpg'], price: 15.00, description: 'HipStore Exclusive Graphic Tee,', category: "apparel"},
-  {name:' IDK', image:['http://ak1.polyvoreimg.com/cgi/img-thing/size/l/tid/114776373.jpg'],price:15.00,category:"apparel"},
-  {name:'IDK2', image:['https://secure.polyvoreimg.com/cgi/img-thing/size/l/tid/170346893.jpg'],price:15.00,category:"apparel"},
-  {name: 'Mermaid T-Shirt', image: ['https://ae01.alicdn.com/kf/HTB1azTRKXXXXXbZXFXXq6xXFXXXq/Basic-t-shirt-women-font-b-hipster-b-font-font-b-clothes-b-font-cute-cartoon.jpg'], price: 15.00, description: 'Mermaid T-Shirt/ Womens',category: "apparel"},
-      
-  //HipStore-Shoes 
-  {name:'All Black Doc Martins',image:['http://ak2.polyvoreimg.com/cgi/img-thing/size/l/tid/156735588.jpg'],category:"apparel"},
-  {name:'Classic White Chuck Taylors',image:['http://ak2.polyvoreimg.com/cgi/img-thing/size/l/tid/152659031.jpg'],category:"apparel"},
-  {name:'Honey Brown Oxfords',image:['http://ak2.polyvoreimg.com/cgi/img-thing/size/l/tid/120961072.jpg'],category:"apparel"},
-  {name:'Black Platform Lace Up Ankle Boots',image:['http://ak2.polyvoreimg.com/cgi/img-thing/size/l/tid/107586810.jpg'],category:"apparel"},
+  {name:'Oversized Demin Jacket', image:['http://ak2.polyvoreimg.com/cgi/img-thing/size/l/tid/144240771.jpg'],price:35.00,description:'Dark.blue stretch.denim. Button fastenings through front. 92% cotton, 6% elastomultiester, 2% elastane; trim: 100% cotton. Machine wash. Designer wash: Loved Cabin Plaid The Trucker oversized stretch.denim jacket.',category:"apparel"},
+  {name:'Oversized Bomber Olive Green Jakcet', image:['http://i61.photobucket.com/albums/h58/tionnaw95/HipStore/jacket%206_zpsjt4sv6lw.jpg?t=1476643075'], price:50.00,description:'On the Road bomber jacket with ribbed trim. Baseball collar; front zip. Long ruched sleeves; zip pocket on left sleeve. Side slip pockets. Relaxed silhouette. Straight hem. Polyester. Contrast, polyester/spandex. Hand wash. Imported.',category:"apparel"},
+  {name:'Brown Shearling Coat',image:['http://i61.photobucket.com/albums/h58/tionnaw95/HipStore/jacket%204_zpsfxx96xfe.jpg?t=1476643082'],price:500.00,description:'Invest in a chic outerwear piece this winter. Crafted from faux shearling, this coat is guaranteed to keep you warm throughout the colder months. Featuring button up fastening and practical pockets, this stylish piece is perfect for throwing over your knitwear. 100% Polyester. Machine wash.',category:"apparel"},
+  //HipStore- Sweaters/Shirts
+  {name:'Rose Pink Sweater', image:['http://i61.photobucket.com/albums/h58/tionnaw95/HipStore/new%20sweater%204_zpso2eamsmj.jpg?t=1476643083'],price:20.00,description:'Soft textured knit sweater, Relaxed, flattering fit , Length covers your back pockets and hits mid-zipper on your favorite jeggings , oversized fit, Metal logo tab at hem, Ribbed cuffs, neck and hem HipStore female adult Rose cotton/acrylic/nylon/wool S/M/L/XL.',category:"apparel"},
+  {name:'Khaki Sweater', image:['http://i61.photobucket.com/albums/h58/tionnaw95/HipStore/new%20sweater%205_zpsdlgrlrqv.jpg?t=1476643083'],price:20.00,description:'When youre bundled up in this cozy off shoulder sweater, the whole world will feel right once again. Whether youre going out on a date or staying in on a weekend, this knit topper can provide you with warmth and style to keep you looking fashionable. Pair this sweater with sneakers and leggings, and you re good to go',category:"apparel"},
+  {name:'Dark Grey Sweater', image:['http://i61.photobucket.com/albums/h58/tionnaw95/HipStore/new%20sweater%206_zpsantuh1is.jpg?t=1476643083'],price:20.00,description:'We all loves this simple but chic sweater, especially on a cold day. This cozy dark grey sweater is made of comfortable material. Sweeten up your look by wearing this with a pair of leggings or skinnies, and ankle booties.',category:"apparel"},
+  {name:'Oversized Red Flannel Shirt',image:['https://sc01.alicdn.com/kf/HTB1LQzYJVXXXXaKXXXXq6xXFXXXc.jpg'],price: 20.00,description:' Relaxed oversized button down plaid flannel shirt in burgundy with a patch pocket & roll tab sleeves.We know you are tired of rolling up your sleeves. That is why we already did it for you',category:"apparel"},
+  {name:'Army Green Vintage Flannel Sweater', image:['https://s-media-cache-ak0.pinimg.com/564x/71/4c/9e/714c9eec1f82c58761dc206443d0a0d4.jpg'], price:25.00, description:'Rock your casual style with confidence wearing this womens plaid shirt from Rock & Republic, featuring a cool high-low hem. High-low hem 1-pocket Button front Button tab sleeves roll from long to 3/4-length Fabric & Care Rayon Machine wash Imported',category:"apparel"},
 
-  //HipStore-OutFits
-  {name: 'Outfit#1', image:['https://s-media-cache-ak0.pinimg.com/564x/30/b3/83/30b38387a4df5f3899d931519ed805f3.jpg'],price:140.00,category:"apparel"},
-  {name: 'Outfit#2', image:['http://ak1.polyvoreimg.com/cgi/img-set/cid/92874159/id/EAgsZqkBSMmQXNkqjqe0MA/size/l.jpg'],price:50.00,category:"apparel"},
-  {name: 'Outfit#3',image:['https://s-media-cache-ak0.pinimg.com/564x/ca/32/4d/ca324d474df4560b352ec264ca29af35.jpg'],price:50.00,category:"apparel"},
-  {name: 'Outfit#4', image:['https://s-media-cache-ak0.pinimg.com/564x/be/da/e6/bedae628bdfb9a16d56878f09b4fdaf4.jpg'],price:50.00,category:"apparel"}
-      ],
+  //HipStore-Bottoms/Pants 
+  {name: 'Hipster roll-up Jeans', image: ['http://picture-cdn.wheretoget.it/lr7aex-l-610x610-jeans-ripped+jeans-boyfriend+jeans-dope-indie-hipster-hole+jeans-high+waisted+jeans.jpg'], price: 26.00, description: 'Laid-back boyfriend jeans with a low rise, featuring dark wash stretch denim, a button fly, destruction and patch detailing, fading and whiskering, five-pocket styling, a double roll hem and iconic back pocket stitching, Imported',category: "apparel"}, 
+
+  {name:'Denim Blue Boyfriend Jeans', image:['http://ak2.polyvoreimg.com/cgi/img-thing/size/l/tid/181658401.jpg'],price:20.00,description:'Karl Lagerfeld blue Stella jeans. Mid.weight denim. Belt loops, designer.embossed black leather label, five pockets, faded, whiskered, distressed details. Button and concealed zip fastening at front. 100% cotton. Machine wash inside out to avoid color transfer Stella mid.rise boyfriend jeans.',category:"apparel"},
+
+  {name:'All Black Skinny Jeans ', image:['http://ak1.polyvoreimg.com/cgi/img-thing/size/l/tid/181805693.jpg'],price:25.00,description:'Black stretch cotton skinny fit jeans from Saint Laurent featuring a low rise, a waistband with belt loops, a button and zip fly, a five pocket design and a regular length. Color: Black. Gender: Female. Material: Cotton/Spandex/Elastane.',category:"apparel"},
+  {name:'Khaki Jeans ', image:['http://ak2.polyvoreimg.com/cgi/img-thing/size/l/tid/114665100.jpg'],price:25.00,description:'Your bold style demands chic 7 For All Mankind jeans. Relaxed Skinny features a slightly looser cut through the top block that tapers to a slim leg. Wide, rolled cuff. Buff is a faded, light khaki wash 9 oz stretch twill with frayed grinding and light ripping for a worn-in look.',category:"apparel"},
+  {name:'Burgundy Jeans ', image:['http://ak2.polyvoreimg.com/cgi/img-thing/size/l/tid/177035265.jpg'],price:25.00,description:'Add these burgundy jeans to your school uniform, featuring faux pockets and iconic back pocket stitching, Imported',category:"apparel"},
+
+  //HipStore-Footwear  
+  {name:'All Black Doc Martins',image:['http://ak2.polyvoreimg.com/cgi/img-thing/size/l/tid/156735588.jpg'],price:150.00,description:'The Dr. Martens Classic 1460 W boot has a classic style with a modern durability that you can always depend on. Smooth leather upper. Features the trademark Dr. Martens yellow stitching and heel loop. Comfortable synthetic lining',category:"apparel"},
+  {name:'Classic White Chuck Taylors',image:['http://ak2.polyvoreimg.com/cgi/img-thing/size/l/tid/113849327.jpg'],price:45.00,description:'Ol skool never looked so fly! Rep your era to the fullest in a pair of these classic Chucks from Converse. Features hi-top sneakers with canvas uppers. Vintage Converse rubber toe cap and color-contrasting sidewall. Canvas-lined with lightly padded footbed for comfort.',category:"apparel"},
+  {name:'Rusty Brown Loafers',image:['http://i61.photobucket.com/albums/h58/tionnaw95/HipStore/new%20shoes%202_zps87kizlmm.jpg?t=1476643082'],price:60.00,description:'Ready for your moccasin mainstay? Reach for the Pineland Moc. Timeless casual receives hits of outdoor inspiration in this premium leather package. Features Dual-tone, full grain leather upper with rolled collar and moc toe details Waxed cotton laces Removable',category:"apparel"},
+  {name:'Black Lace Up Ankle Booties',image:['http://ak2.polyvoreimg.com/cgi/img-thing/size/l/tid/181251967.jpg'],price:580.00,description:'Leather and suede ankle boots have a sharply pointed toe that creates a flattering leg-lengthening effect. They are set on an elegant wedge heel thats constructed with a sleek panel of acrylic for a stacked look. We think they are the perfect height for this seasons cropped denim',category:"apparel"},
+
+  ],
 
 //---------- CATEGORY:FOOD -----------
 
