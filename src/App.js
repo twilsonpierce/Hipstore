@@ -90,7 +90,13 @@ var App = React.createClass({
   handleSearchReset() {
     this.setState({filteredList: this.state.listOfItems})
   },
-  addToCart(item, event){
+  addToCart(item, event,qty){
+
+    console.log(item[0], 'this is the item');
+    console.log(qty, 'this is the qty');
+
+    item[0].quantity = qty;
+    
       // if (this.state.cart.length === 0) {
       //   let item = item[0];
       //   this.setState({cart: [{item, quantity:1}] })

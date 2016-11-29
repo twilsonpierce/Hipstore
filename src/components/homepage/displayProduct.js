@@ -15,6 +15,8 @@ const DisplayProduct = React.createClass({
             src={this.props.src} />
         </Link>
         <p><span>{this.props.itemName}</span><span>{this.props.price ? ': $' + this.props.price : ""}</span></p>
+        <br/>
+        <p>Qty:{this.props.quantity}</p>
       </article>
     )
   }

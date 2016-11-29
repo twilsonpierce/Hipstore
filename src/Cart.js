@@ -5,14 +5,16 @@ import DisplayCartItem from './components/cart/displayCartItem'
 const Cart = React.createClass({
    render() {
       let itemsInCart = this.props.cart.map((item, i) =>(
-        <DisplayCartItem key={i} name={item.name} price={item.price} image={item.image[0]} />
+        <DisplayCartItem key={i} name={item.name} price={item.price} image={item.image[0]} quantity={item.quantity} />
       ))
 
       let cartPrice = this.props.cart.reduce((total, item) => {
         console.log(total)
-        return total + item.price
+        
+        return total + (item.price * item.quantity)
       }, 0)
 
+   
       return (
          <div className='cartPage'>
           <h1>Cart</h1>

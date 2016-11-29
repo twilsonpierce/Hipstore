@@ -25,7 +25,8 @@ const ProductPage = React.createClass({
   },
   addItemToCart(event){
     let item = this.findItem()
-    this.props.addToCart(item, event)
+    let qty = this.state.qty
+    this.props.addToCart(item, event,qty)
   },
   onStarClick(nextValue, prevValue, name) {
       this.setState({rating: nextValue});

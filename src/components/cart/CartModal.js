@@ -9,13 +9,13 @@ const CartModal = React.createClass({
     let cartDisplay = []
     for (let i = this.props.cart.length-1; i >= this.props.cart.length - 3; i--){
       if(item[i] !== undefined){
-        cartDisplay.unshift(<DisplayProduct isCartModal={true} category={item[i].category} src={item[i].image[0]} itemName={item[i].name} price={item[i].price} key={i} closeModal={that.props.closeModal}/>)
+        cartDisplay.unshift(<DisplayProduct isCartModal={true} category={item[i].category} src={item[i].image[0]} itemName={item[i].name} price={item[i].price} key={i} closeModal={that.props.closeModal} quantity={item[i].quantity}/>)
       }
     }
 
     let cartPrice = this.props.cart.reduce((total, item) => {
       console.log(total)
-      return total + item.price
+      return total + (item.price * item.quantity)
     }, 0)
 
     return (

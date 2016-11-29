@@ -9,6 +9,7 @@ const DisplayCartItem = React.createClass({
         </div>
         <p>{this.props.name}</p>
         <p>{'$' +this.props.price}</p>
+        <p> Qty:{this.props.quantity}</p>
       </div>
     )
   }
